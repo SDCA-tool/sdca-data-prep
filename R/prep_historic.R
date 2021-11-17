@@ -92,21 +92,21 @@ unlink("data/scheduledmonument.geojson", recursive = T)
 unlink("data/worldheritagesite.geojson", recursive = T)
 unlink("data/listedbuildings.geojson", recursive = T)
 
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/battlefields.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/conservationareas.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/parksandgardens.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/scheduledmonument.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/worldheritagesite.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/nationalparks.geojson.zip", 
+pb_upload("data/listedbuildings.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
