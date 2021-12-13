@@ -1,4 +1,11 @@
+# Prep AONB
 library(sf)
+library(tmap)
+library(dplyr)
+library(tidyr)
+library(piggyback)
+tmap_mode("view")
+
 dir.create("data/flooding")
 download.file(url = "https://environment.data.gov.uk/UserDownloads/interactive/14d8e927c20149589d6e068351e924a373092/EA_FloodMapForPlanningRiversAndSeaFloodZone2_GeoJSON_Full.zip",
               destfile = "data/flooding/floodzone2.zip")
@@ -16,6 +23,13 @@ unzip("data/flooding/floodzone3.zip",
       exdir = "tmp")
 flood3 <- st_read("tmp/data/Flood_Map_for_Planning_Rivers_and_Sea_Flood_Zone_3.json")
 unlink("tmp", recursive = TRUE)
+
+# dir.create("tmp")
+# unzip("data/flooding/National_Flood_Risk_Wales.zip",
+#       exdir = "tmp")
+# wales <- st_read("tmp/")
+# unlink("tmp", recursive = TRUE)
+
 
 flood2 <- st_transform(flood2, 4326)
 flood3 <- st_transform(flood3, 4326)

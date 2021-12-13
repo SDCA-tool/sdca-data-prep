@@ -3,6 +3,7 @@ library(sf)
 library(stars)
 
 dem <- read_stars("D:/OneDrive - University of Leeds/Data/opentripplanner/graphs/great-britain-NTEM/UK-dem-50m-4326.tif")
+dem <- read_stars("D:/GitHub/SDCA-tool/sdca-data-prep/data/UK-dem-50m-4326-Int16.tif")
 
 line <- matrix(c(-1.7679598046120508, 53.3644133826852, -1.924790128647207,  53.64932645315051 ), 
                ncol = 2, byrow = TRUE)
