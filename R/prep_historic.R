@@ -54,8 +54,8 @@ worldheritage <- st_make_valid(worldheritage)
 write_sf(battlefields, "data/battlefields.geojson")
 write_sf(conservationarea, "data/conservationareas.geojson")
 write_sf(park, "data/parksandgardens.geojson")
-write_sf(monument, "data/scheduledmonument.geojson")
-write_sf(worldheritage, "data/worldheritagesite.geojson")
+write_sf(monument, "data/scheduledmonuments.geojson")
+write_sf(worldheritage, "data/worldheritagesites.geojson")
 write_sf(listed, "data/listedbuildings.geojson")
 
 zip::zip("data/battlefields.geojson.zip", 
@@ -70,12 +70,12 @@ zip::zip("data/parksandgardens.geojson.zip",
          files = "data/parksandgardens.geojson", 
          include_directories = FALSE,
          mode = "cherry-pick")
-zip::zip("data/scheduledmonument.geojson.zip", 
-         files = "data/scheduledmonument.geojson", 
+zip::zip("data/scheduledmonuments.geojson.zip", 
+         files = "data/scheduledmonuments.geojson", 
          include_directories = FALSE,
          mode = "cherry-pick")
-zip::zip("data/worldheritagesite.geojson.zip", 
-         files = "data/worldheritagesite.geojson", 
+zip::zip("data/worldheritagesites.geojson.zip", 
+         files = "data/worldheritagesites.geojson", 
          include_directories = FALSE,
          mode = "cherry-pick")
 zip::zip("data/listedbuildings.geojson.zip", 
@@ -88,8 +88,8 @@ unlink("tmp", recursive = T)
 unlink("data/battlefields.geojson", recursive = T)
 unlink("data/conservationareas.geojson", recursive = T)
 unlink("data/parksandgardens.geojson", recursive = T)
-unlink("data/scheduledmonument.geojson", recursive = T)
-unlink("data/worldheritagesite.geojson", recursive = T)
+unlink("data/scheduledmonuments.geojson", recursive = T)
+unlink("data/worldheritagesites.geojson", recursive = T)
 unlink("data/listedbuildings.geojson", recursive = T)
 
 pb_upload("data/battlefields.geojson.zip", 
@@ -101,10 +101,10 @@ pb_upload("data/conservationareas.geojson.zip",
 pb_upload("data/parksandgardens.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/scheduledmonument.geojson.zip", 
+pb_upload("data/scheduledmonuments.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
-pb_upload("data/worldheritagesite.geojson.zip", 
+pb_upload("data/worldheritagesites.geojson.zip", 
           repo = "SDCA-tool/sdca-data", 
           tag = "map_data")
 pb_upload("data/listedbuildings.geojson.zip", 
