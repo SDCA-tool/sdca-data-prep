@@ -7,7 +7,7 @@ library(piggyback)
 tmap_mode("view")
 
 sites = read.csv("D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/WP3 – Embodied carbon of infrastructure/Production sites/production_sites.csv")
-sites = st_as_sf(sites, coords = c("Longitude","Latitude"))
+sites = st_as_sf(sites, coords = c("Longitude","Latitude"), crs = 4326)
 
 sites$Northing <- NULL
 sites$Easting <- NULL
