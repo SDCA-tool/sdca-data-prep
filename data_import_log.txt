@@ -1,0 +1,93 @@
+2022-01-26 12:06:58 Starting data import
+2022-01-26 12:06:58 reading E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/Examples for Malcolm 250122/interventions_tabulated.xlsx
+
+2022-01-26 12:06:58 rows =  66 cols = 11
+
+2022-01-26 12:06:58 reading E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/Examples for Malcolm 250122/High_speed_rail_intervention_assets_list.xlsx
+
+ Sheet found: New high speed route 
+ Sheet found: Station - at grade 
+ Sheet found: Station - underground 
+ Sheet found: Station - elevated 
+ Sheet found: Track 
+ Sheet found: OLE system 
+ Sheet found: Point and crossings 
+ Sheet found: Bridge 
+ Sheet found: Overbridge 
+ Sheet found: Underbridge 
+ Sheet found: Green bridge 
+ Sheet found: Underpass 
+ Sheet found: Viaduct 
+ Sheet found: Bored_Tunnel 
+ Sheet found: Cut_cover_Tunnel 
+ Sheet found: Mined_Tunnel 
+ Sheet found: Rail maintenance depot 
+ Sheet found: Rail freight terminal
+2022-01-26 12:06:58 The following  tabs in intervention_assets_list are not in interventions_tabulated: 
+Bored_Tunnel, Cut_cover_Tunnel, Mined_Tunnel
+2022-01-26 12:06:58 The following  interventions in interventions_tabulated are not tabs in intervention_assets_list : 
+Track (double), Tunnel, New standard route, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal, New metro line, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal
+2022-01-26 12:07:00 Imported all sheets
+2022-01-26 12:07:00 Merged all sheets into single table
+ Column names are 
+asset 
+include 
+asset_class 
+asset_unit 
+unit_type 
+asset_parameters 
+user_entered_parameters 
+tool_extracted_parameters 
+tool_calculated_parameters 
+area_unit 
+area_default 
+diameter_unit 
+diameter_default 
+length_unit 
+length_default 
+number_unit 
+number_default 
+span_unit 
+span_default 
+volume_unit 
+volume_default 
+width_unit 
+width_default 
+intervention
+2022-01-26 12:07:00 reading E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/Examples for Malcolm 250122/example_asset.xlsx
+
+ Sheet found: Viaduct_raw_info_Colne 
+ Sheet found: Viaduct_processed_Colne 
+ Sheet found: Embankment_raw_info_ColneSouth 
+ Sheet found: Embankment_processed_info_ColnS 
+ Sheet found: Embankment_raw_info_ColneNorth 
+ Sheet found: Embankment_processed_info_ColnN 
+ Sheet found: Viaduct 
+ Sheet found: Embankment 
+ Sheet found: Overbridge
+2022-01-26 12:07:00 Manually limted to following sheets 
+Viaduct 
+Embankment 
+Overbridge
+2022-01-26 12:07:00 Imported all sheets
+2022-01-26 12:07:00 Merged all sheets into single table
+ Column names are 
+works_category_level_1 
+item 
+quantity 
+cf_name 
+input_unit 
+A5 
+asset_lifetime 
+replacements_during_lifetime 
+no_granular_data_A1-A3 
+no_granular_data_A4 
+no_granular_data_B2 
+no_granular_data_B4 
+assets_sample_size 
+intervention_asset
+2022-01-26 12:07:00 reading E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv
+
+2022-01-26 12:07:00 saving outputs 
+
+2022-01-26 12:07:00 Processing complete 

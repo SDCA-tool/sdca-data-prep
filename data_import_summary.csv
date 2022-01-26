@@ -1,0 +1,67 @@
+"mode","intervention_class","intervention","no_asset","no_components","no_carbon_factor"
+"High speed rail","New construction","New high speed route",30,19,57
+"Heavy rail","New construction","Viaduct",1,15,42
+"High speed rail","New construction","Viaduct",1,15,42
+"Light rail","New construction","Viaduct",1,15,42
+"Heavy rail","New construction","Track",12,7,15
+"Light rail","New construction","Track",12,7,15
+"Heavy rail","New construction","Bridge",3,0,0
+"Heavy rail","New construction","Green bridge",1,0,0
+"Heavy rail","New construction","New standard route",0,0,0
+"Heavy rail","New construction","Overbridge",3,1,0
+"Heavy rail","New construction","Rail freight terminal",7,0,0
+"Heavy rail","New construction","Rail maintenance yard",0,0,0
+"Heavy rail","New construction","Station - destination - at grade",0,0,0
+"Heavy rail","New construction","Station - destination - elevated",0,0,0
+"Heavy rail","New construction","Station - destination - underground",0,0,0
+"Heavy rail","New construction","Station - local - at grade",0,0,0
+"Heavy rail","New construction","Station - local - elevated",0,0,0
+"Heavy rail","New construction","Station - local - underground",0,0,0
+"Heavy rail","New construction","Tunnel",0,0,0
+"Heavy rail","New construction","Underbridge",3,0,0
+"Heavy rail","New construction","Underpass",1,0,0
+"Heavy rail","Removal","Station removal",0,0,0
+"Heavy rail","Upgrade","Double track to quadruple track",0,0,0
+"Heavy rail","Upgrade","Freight to passenger line",0,0,0
+"Heavy rail","Upgrade","Line electrification",0,0,0
+"Heavy rail","Upgrade","Overhead line equipment (OLE) - single track",0,0,0
+"Heavy rail","Upgrade","Overhead line equipment (OLE) - twin track",0,0,0
+"Heavy rail","Upgrade","Single track to double track",0,0,0
+"Heavy rail","Upgrade","Station - platform lengthening",0,0,0
+"High speed rail","New construction","Bridge",3,0,0
+"High speed rail","New construction","Green bridge",1,0,0
+"High speed rail","New construction","OLE system",1,0,0
+"High speed rail","New construction","Overbridge",3,1,0
+"High speed rail","New construction","Point and crossings",1,0,0
+"High speed rail","New construction","Rail freight terminal",7,0,0
+"High speed rail","New construction","Rail maintenance depot",7,0,0
+"High speed rail","New construction","Station - at grade",5,0,0
+"High speed rail","New construction","Station - elevated",1,0,0
+"High speed rail","New construction","Station - underground",1,0,0
+"High speed rail","New construction","Track (double)",0,0,0
+"High speed rail","New construction","Tunnel",0,0,0
+"High speed rail","New construction","Underbridge",3,0,0
+"High speed rail","New construction","Underpass",1,0,0
+"Light rail","New construction","Bridge",3,0,0
+"Light rail","New construction","Green bridge",1,0,0
+"Light rail","New construction","New metro line",0,0,0
+"Light rail","New construction","Overbridge",3,1,0
+"Light rail","New construction","Rail freight terminal",7,0,0
+"Light rail","New construction","Rail maintenance yard",0,0,0
+"Light rail","New construction","Station - destination - at grade",0,0,0
+"Light rail","New construction","Station - destination - elevated",0,0,0
+"Light rail","New construction","Station - destination - underground",0,0,0
+"Light rail","New construction","Station - local - at grade",0,0,0
+"Light rail","New construction","Station - local - elevated",0,0,0
+"Light rail","New construction","Station - local - underground",0,0,0
+"Light rail","New construction","Tunnel",0,0,0
+"Light rail","New construction","Underbridge",3,0,0
+"Light rail","New construction","Underpass",1,0,0
+"Light rail","Removal","Station removal",0,0,0
+"Light rail","Upgrade","Double track to quadruple track",0,0,0
+"Light rail","Upgrade","Freight to passenger line",0,0,0
+"Light rail","Upgrade","Line electrification",0,0,0
+"Light rail","Upgrade","Overhead line equipment (OLE) - single track",0,0,0
+"Light rail","Upgrade","Overhead line equipment (OLE) - twin track",0,0,0
+"Light rail","Upgrade","Single track to double track",0,0,0
+"Light rail","Upgrade","Station - platform lengthening",0,0,0
