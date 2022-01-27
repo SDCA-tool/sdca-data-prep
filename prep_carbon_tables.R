@@ -1,4 +1,5 @@
 dir = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
 
 library(readr)
 library(readxl)
@@ -77,6 +78,55 @@ intervention_assets = intervention_assets[,c("intervention", "asset","include","
                                              "span_default","volume_unit",
                                              "volume_default","width_unit","width_default")]
 
+cat(paste0("\n",Sys.time()," Creating parameters table"), file = log_con, append = TRUE)
+
+intervention_assets_parameters = intervention_assets[,c("asset",
+                                                        "area_unit","area_default",
+                                                        "diameter_unit","diameter_default",
+                                                       "length_unit","length_default",
+                                                       "number_unit","number_default",
+                                                       "span_unit","span_default",
+                                                       "volume_unit","volume_default",
+                                                       "width_unit","width_default")]#
+                                                   
+intervention_assets_parameters[] <- lapply(intervention_assets_parameters, as.character)
+
+foo = tidyr::pivot_longer(intervention_assets_parameters[,c("asset",
+                                                            "area_unit",
+                                                            "diameter_unit",
+                                                            "length_unit",
+                                                            "number_unit",
+                                                            "span_unit",
+                                                            "volume_unit",
+                                                            "width_unit")],
+  cols = c(tidyr::ends_with("_unit"),),
+  names_to = c("parameter"),
+  values_to = "unit"
+)
+foo$parameter <- gsub("_unit","",foo$parameter)
+foo2 = tidyr::pivot_longer(intervention_assets_parameters[,c("asset",
+                                                            "area_default",
+                                                            "diameter_default",
+                                                            "length_default",
+                                                            "number_default",
+                                                            "span_default",
+                                                            "volume_default",
+                                                            "width_default")],
+                          cols = c(tidyr::ends_with("_default"),),
+                          names_to = c("parameter"),
+                          values_to = "default"
+)
+foo2$parameter <- gsub("_default","",foo2$parameter)
+foo$default = foo2$default
+intervention_assets_parameters <- foo[!is.na(foo$unit),]
+intervention_assets_parameters$default <- as.numeric(intervention_assets_parameters$default)
+
+
+intervention_assets <- intervention_assets[,c("intervention", "asset","include","asset_class",
+                                              "asset_unit","unit_type","asset_parameters",
+                                              "user_entered_parameters","tool_extracted_parameters",
+                                              "tool_calculated_parameters")]
+
 
 
 # Asset Components
@@ -103,18 +153,139 @@ for(i in 1:length(sheets)){
 cat(paste0("\n",Sys.time()," Imported all sheets"), file = log_con, append = TRUE)
 
 asset_components = bind_rows(asset_components)
+asset_components = asset_components[,c("intervention_asset",names(asset_components)[names(asset_components) != "intervention_asset"])]
+asset_components$assets_sample_size <- NULL
+
 
 cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_con, append = TRUE)
 cat(paste0("\n Column names are "), file = log_con, append = TRUE)
 cat(paste0("\n",names(asset_components)), file = log_con, append = TRUE)
-
-
 
 # Carbon Factors
 path = file.path(dir,"Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv")
 cat(paste0("\n",Sys.time()," reading ",path), file = log_con, append = TRUE, sep = "\n")
 
 carbon_factors = read_csv(path)
+
+if(any(duplicated(carbon_factors$cf_name))){
+  warning("Duplicated carbon factor names")
+  dups <- carbon_factors$cf_name[duplicated(carbon_factors$cf_name)]
+  cat(paste0("\n Duplicated carbon factor names found"), file = log_con, append = TRUE)
+  cat(paste0("\n",dups), file = log_con, append = TRUE)
+  
+  cat(paste0("\n De-duplicating"), file = log_con, append = TRUE)
+  
+  carbon_factors_notdup = carbon_factors[!carbon_factors$cf_name %in% dups, ]
+  carbon_factors_dup = carbon_factors[carbon_factors$cf_name %in% dups, ]
+  carbon_factors_dup = carbon_factors_dup %>%
+    group_by(cf_name) %>%
+    group_split()
+  carbon_factors_res = list()
+  for(i in seq_len(length(carbon_factors_dup))){
+    sub = carbon_factors_dup[[i]]
+    
+    # Select Based on methodology
+    if(all(grepl("Defra",sub$methodology))){
+      if(all(grepl("Scope",sub$methodology))){
+        if(any(grepl("All Scope",sub$methodology))){
+          sub = sub[grepl("All Scope",sub$methodology),]
+        } else {
+          sub = sub[grepl("Scope 3",sub$methodology),]
+        }
+        
+      }
+      if(all(grepl(" RF",sub$methodology))){
+        sub = sub[grepl("with RF",sub$methodology),]
+      }
+      if(all(grepl("Waste",sub$methodology))){
+        if(any(grepl("Open-loop",sub$methodology))){
+          sub = sub[grepl("Open-loop",sub$methodology),]
+        }
+        if(any(grepl("Landfill",sub$methodology))){
+          sub = sub[grepl("Landfill",sub$methodology),]
+        }
+        if(any(grepl("Closed-loop",sub$methodology))){
+          sub = sub[grepl("Closed-loop",sub$methodology),]
+        }
+      }
+      
+    } 
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    if(all(grepl("Bath",sub$methodology))){
+      if(length(unique(sub$methodology)) > 1){
+        sub = sub[sub$methodology == "Bath ICE - 3", ]
+      }
+    }
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    if(all(grepl("EMEP/EEA",sub$methodology))){
+      if(length(unique(sub$methodology)) > 1){
+        sub = sub[grepl("Non-Hand Held",sub$methodology), ]
+      }
+    }
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    
+    if(length(unique(sub$methodology)) > 1){
+      if(any(grepl("Plastics Europe EPD",sub$methodology))){
+        sub <- sub[grepl("Plastics Europe EPD",sub$methodology),]
+      }
+    }
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    # Select by Location
+    if(length(unique(sub$source_id)) > 1){
+      if(any(sub$source_id == "UK")){
+        sub <- sub[sub$source_id == "UK",]
+      } else if(any(grepl("Europe",sub$source_id))){
+        sub <- sub[grepl("Europe",sub$source_id),]
+        if(nrow(sub) > 1){
+          sub <- sub[sub$source_id == "Europe",]
+        }
+      } else if (any(grepl("Global",sub$source_id))) {
+        sub <- sub[grepl("Global",sub$source_id),]
+      }
+    }
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    # Select by Units
+    if(length(unique(sub$input_unit)) > 1){
+      if("tonne" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "tonne",]
+      } else if("litre" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "litre",]
+      } else if("kg" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "kg",]
+      } else if("km" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "km",]
+      } else if("tkm" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "tkm",]
+      } else if("pkm" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "pkm",]
+      } else if("m3" %in% sub$input_unit){
+        sub <- sub[sub$input_unit  == "m3",]
+      }
+    }
+    
+    if(nrow(sub) == 1){carbon_factors_res[[i]] <- sub; next}
+    
+    
+    stop("muliple rows got though for ",i)
+  }
+  carbon_factors_res = bind_rows(carbon_factors_res)
+  summary(duplicated(carbon_factors_res$cf_name))
+  
+  carbon_factors = rbind(carbon_factors_notdup, carbon_factors_res)
+  carbon_factors = carbon_factors[,c("cf_name","material_type","carbon_factor","carbon_factor_units","input_unit",
+                                     "category")]
+  cat(paste0("\n",Sys.time()," removed duplicated carbon factors "), file = log_con, append = TRUE, sep = "\n")
+}
 
 #DO checks
 interventions_sub = interventions[,c("mode","intervention_class","intervention"), drop = FALSE,]
@@ -143,5 +314,8 @@ write.csv(interventions, "../sdca-data/data_tables/interventions.csv", row.names
 write.csv(intervention_assets, "../sdca-data/data_tables/intervention_assets.csv", row.names = FALSE, na = "")
 write.csv(asset_components, "../sdca-data/data_tables/asset_components.csv", row.names = FALSE, na = "")
 write.csv(carbon_factors, "../sdca-data/data_tables/carbon_factors.csv", row.names = FALSE, na = "")
+write.csv(intervention_assets_parameters, "../sdca-data/data_tables/intervention_assets_parameters.csv", row.names = FALSE, na = "")
+
+
 
 cat(paste0("\n",Sys.time()," Processing complete "), file = log_con, append = TRUE, sep = "\n")
