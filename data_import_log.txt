@@ -1,9 +1,9 @@
-2022-01-27 20:39:20 Starting data import
-2022-01-27 20:39:20 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/interventions_tabulated.xlsx
+2022-01-28 23:42:54 Starting data import
+2022-01-28 23:42:54 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/interventions_tabulated.xlsx
 
-2022-01-27 20:39:20 rows =  66 cols = 11
+2022-01-28 23:42:54 rows =  66 cols = 11
 
-2022-01-27 20:39:20 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/High_speed_rail_intervention_assets_list.xlsx
+2022-01-28 23:42:54 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/High_speed_rail_intervention_assets_list.xlsx
 
  Sheet found: New high speed route 
  Sheet found: Station - at grade 
@@ -23,12 +23,12 @@
  Sheet found: Mined_Tunnel 
  Sheet found: Rail maintenance depot 
  Sheet found: Rail freight terminal
-2022-01-27 20:39:20 The following  tabs in intervention_assets_list are not in interventions_tabulated: 
+2022-01-28 23:42:55 The following  tabs in intervention_assets_list are not in interventions_tabulated: 
 Bored_Tunnel, Cut_cover_Tunnel, Mined_Tunnel
-2022-01-27 20:39:20 The following  interventions in interventions_tabulated are not tabs in intervention_assets_list : 
+2022-01-28 23:42:55 The following  interventions in interventions_tabulated are not tabs in intervention_assets_list : 
 Track (double), Tunnel, New standard route, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal, New metro line, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal
-2022-01-27 20:39:21 Imported all sheets
-2022-01-27 20:39:21 Merged all sheets into single table
+2022-01-28 23:42:55 Imported all sheets
+2022-01-28 23:42:55 Merged all sheets into single table
  Column names are 
 asset 
 include 
@@ -54,8 +54,8 @@ volume_default
 width_unit 
 width_default 
 intervention
-2022-01-27 20:39:21 Creating parameters table
-2022-01-27 20:39:21 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/example_asset.xlsx
+2022-01-28 23:42:55 Creating parameters table
+2022-01-28 23:42:55 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/example_asset.xlsx
 
  Sheet found: Viaduct_raw_info_Colne 
  Sheet found: Viaduct_processed_Colne 
@@ -66,12 +66,12 @@ intervention
  Sheet found: Viaduct 
  Sheet found: Embankment 
  Sheet found: Overbridge
-2022-01-27 20:39:21 Manually limted to following sheets 
+2022-01-28 23:42:55 Manually limted to following sheets 
 Viaduct 
 Embankment 
 Overbridge
-2022-01-27 20:39:21 Imported all sheets
-2022-01-27 20:39:21 Merged all sheets into single table
+2022-01-28 23:42:55 Imported all sheets
+2022-01-28 23:42:55 Merged all sheets into single table
  Column names are 
 intervention_asset 
 works_category_level_1 
@@ -86,7 +86,7 @@ no_granular_data_A1-A3
 no_granular_data_A4 
 no_granular_data_B2 
 no_granular_data_B4
-2022-01-27 20:39:21 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv
+2022-01-28 23:42:55 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv
 
  Duplicated carbon factor names found
 Aluminium - Cast Products 
@@ -1148,8 +1148,8 @@ Glass - Roof or Skylight
 Glass - General 
 Glass - Multi Layer Safety, 1mm - Fire Resistant Core
  De-duplicating
-2022-01-27 20:40:16 removed duplicated carbon factors 
+2022-01-28 23:43:47 removed duplicated carbon factors 
 
-2022-01-27 20:40:16 saving outputs 
+2022-01-28 23:43:47 saving outputs 
 
-2022-01-27 20:40:16 Processing complete 
+2022-01-28 23:43:47 Processing complete 
