@@ -161,6 +161,50 @@ cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_c
 cat(paste0("\n Column names are "), file = log_con, append = TRUE)
 cat(paste0("\n",names(asset_components)), file = log_con, append = TRUE)
 
+asset_components$input_unit[asset_components$cf_name == "no_granular_data"] = "no_granular_data"
+asset_components$input_unit[asset_components$input_unit == "metres"] = "m"
+
+#Standerdise to SI units
+for(i in 1:nrow(asset_components)){
+  sub_unit = asset_components$input_unit[i]
+  if(sub_unit == "kg"){
+    # Do nothing
+  } else if (sub_unit == "tonnes") {
+    asset_components$quantity[i] = asset_components$quantity[i] * 1000
+    asset_components$A5[i] = asset_components$A5[i] * 1000
+    asset_components$input_unit[i] = "kg"
+  } else {
+    if(!sub_unit %in% c("m","m2","m3","no_granular_data")){
+      stop("Unknown input_unit:  ",sub_unit)
+    }
+  }
+  
+}
+
+# Standardise intervention_assets and asset_components to SI units
+
+intervention_assets_sub = intervention_assets[,c("asset","asset_unit")]
+intervention_assets_sub = unique(intervention_assets_sub)
+asset_components = left_join(asset_components, intervention_assets_sub, by = c("intervention_asset" = "asset"))
+
+for(i in 1:nrow(asset_components)){
+  sub_unit = asset_components$asset_unit[i]
+  if (sub_unit == "km") {
+    asset_components$quantity[i] = asset_components$quantity[i] / 1000
+    asset_components$A5[i] = asset_components$A5[i] / 1000
+    asset_components$input_unit[i] = "asset_unit"
+  } else {
+    if(!sub_unit %in% c("m","number")){
+      stop("Unknown asset_unit:  ",sub_unit)
+    }
+  }
+  
+}
+
+intervention_assets$asset_unit[intervention_assets$asset_unit == "km"] = "m"
+asset_components$asset_unit = NULL
+
+
 # Carbon Factors
 path = file.path(dir,"Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv")
 cat(paste0("\n",Sys.time()," reading ",path), file = log_con, append = TRUE, sep = "\n")
@@ -287,6 +331,11 @@ if(any(duplicated(carbon_factors$cf_name))){
   cat(paste0("\n",Sys.time()," removed duplicated carbon factors "), file = log_con, append = TRUE, sep = "\n")
 }
 
+# Change Gypsum to its own carbon factor type
+carbon_factors$material_type[carbon_factors$cf_name == "Plaster (Gypsum) - General"] = "Gypsum"
+
+
+
 #DO checks
 interventions_sub = interventions[,c("mode","intervention_class","intervention"), drop = FALSE,]
 intervention_assets_sub = intervention_assets[,c("intervention","asset")]
@@ -310,11 +359,11 @@ write.csv(interventions_summary, "data_import_summary.csv", row.names = FALSE, n
 # Write out tables
 cat(paste0("\n",Sys.time()," saving outputs "), file = log_con, append = TRUE, sep = "\n")
 
-write.csv(interventions, "../sdca-data/data_tables/interventions.csv", row.names = FALSE, na = "")
-write.csv(intervention_assets, "../sdca-data/data_tables/intervention_assets.csv", row.names = FALSE, na = "")
-write.csv(asset_components, "../sdca-data/data_tables/asset_components.csv", row.names = FALSE, na = "")
-write.csv(carbon_factors, "../sdca-data/data_tables/carbon_factors.csv", row.names = FALSE, na = "")
-write.csv(intervention_assets_parameters, "../sdca-data/data_tables/intervention_assets_parameters.csv", row.names = FALSE, na = "")
+write.csv(interventions, "../sdca-data/data_tables/interventions.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(intervention_assets, "../sdca-data/data_tables/intervention_assets.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(asset_components, "../sdca-data/data_tables/asset_components.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(carbon_factors, "../sdca-data/data_tables/carbon_factors.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(intervention_assets_parameters, "../sdca-data/data_tables/intervention_assets_parameters.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
 
 
 
