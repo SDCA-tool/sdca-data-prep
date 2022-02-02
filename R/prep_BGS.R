@@ -17,7 +17,7 @@ superficial <- st_read("tmp/UK_625k_SUPERFICIAL_Geology_Polygons.shp")
 unlink("tmp", recursive = TRUE)
 
 bedrock <- bedrock[,"RCS_D"]
-superficial <- superficial[,"RCS_D"]
+superficial <- superficial[,"ROCK_D"]
 
 bedrock_lookup <- unique(bedrock$RCS_D)
 write.csv(bedrock_lookup, "bedrock_lookup.csv", row.names = FALSE)
@@ -57,3 +57,4 @@ pb_upload("data/superficial.geojson.zip",
 
 
 plot(bedrock)
+plot(superficial)
