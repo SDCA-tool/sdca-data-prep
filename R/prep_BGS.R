@@ -2,6 +2,10 @@
 library(sf)
 library(zip)
 library(piggyback)
+library(dplyr)
+library(tmap)
+library(stars)
+tmap_mode("view")
 
 
 dir.create("tmp")
@@ -30,6 +34,109 @@ names(superficial) = c("type","geometry")
 
 bedrock <- st_transform(bedrock, 4326)
 superficial <- st_transform(superficial, 4326)
+
+bedrock_id <- unique(st_drop_geometry(bedrock))
+bedrock_id$id = 1:nrow(bedrock_id)
+write.csv(bedrock_lookup, "bedrock_lookup.csv", row.names = FALSE)
+
+bedrock = left_join(bedrock, bedrock_id, by = "type")
+
+# Get DEM and rasterise
+dir.create("tmp")
+unzip("data/UKdem.tif.zip",
+      exdir = "tmp")
+dem <- read_stars("tmp/UKdem.tif")
+dem <- st_as_stars(dem)
+
+bedrock_raster = st_rasterize(bedrock["id"], dem)
+write_stars(bedrock_raster, "data/bedrock.tif")
+
+
+
+
+unlink("tmp", recursive = TRUE)
+
+
+
+
+#Add in classification data
+
+bedrock_slope <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Volumes.xlsx",
+                                    sheet = "Cut_angle_bedrock")
+
+superficial_slope <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Volumes.xlsx",
+                                    sheet = "Cut_angle_superficial")
+
+
+bedrock <- left_join(bedrock, bedrock_slope, by = c("type" = "Input Bedrock"))
+superficial <- left_join(superficial, superficial_slope, by = c("type" = "Input Superficial Deposit"))
+
+# Fill codes
+
+bedrock_class <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                    sheet = "Bedrock_Classification")
+superficial_class <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                   sheet = "Superficial_Classification")
+names(bedrock_class) = c("Input Bedrock","Description","type_0","type_1",
+                         "type_2","type_3","type_6","type_7",
+                         "type_8","type_9","Cut Intensity")
+names(superficial_class) = c("Input Superficial Deposit","thickness","Description","type_0","type_1",
+                         "type_2","type_3","type_6","type_7",
+                         "type_8","type_9","Cut Intensity")
+bedrock_class = bedrock_class[3:nrow(bedrock_class),]
+superficial_class = superficial_class[3:nrow(superficial_class),]
+
+bedrock_class[paste0("type_",c(0:3,6:9))] <- lapply(bedrock_class[paste0("type_",c(0:3,6:9))], function(x){
+  x = as.numeric(x)
+  x[is.na(x)] = 0
+  x
+})
+
+superficial_class[paste0("type_",c(0:3,6:9))] <- lapply(superficial_class[paste0("type_",c(0:3,6:9))], function(x){
+  x = as.numeric(x)
+  x[is.na(x)] = 0
+  x
+})
+
+bedrock <- left_join(bedrock, bedrock_class, by = c("type" = "Input Bedrock"))
+superficial <- left_join(superficial, superficial_class, by = c("type" = "Input Superficial Deposit"))
+
+bedrock_loadfactor <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                    sheet = "bedrock_LF", skip = 1)
+superficial_loadfactor <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                        sheet = "superficial_LF", skip = 1)
+
+
+bedrock <- left_join(bedrock, bedrock_loadfactor, by = c("type" = "Input Bedrock"))
+superficial <- left_join(superficial, superficial_loadfactor, by = c("type" = "Input Superficial Deposit"))
+
+bedrock_emissions <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                        sheet = "bedrock_CE", skip = 1)
+superficial_emissions <- readxl::read_excel("E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/WP3 – Embodied carbon of infrastructure/Earthworks/Earthworks_Carbon_Factors_V1.xlsx",
+                                            sheet = "superficial_CE", skip = 1)
+
+bedrock <- left_join(bedrock, bedrock_emissions, by = c("type" = "Input Bedrock"))
+superficial <- left_join(superficial, superficial_emissions, by = c("type" = "Input Superficial Deposit"))
+
+bedrock <- st_make_valid(bedrock)
+bedrock$area <- as.numeric(st_area(bedrock))
+summary(bedrock$area)
+qtm(bedrock[bedrock$area == max(bedrock$area),])
+
+# Split polyons into a grid
+ukgrid <- st_make_grid(bedrock, n = c(300,100))
+qtm(ukgrid, fill = NULL)
+ukgrid <- st_cast(ukgrid, "LINESTRING")
+
+bedrock_big = bedrock[bedrock$area > 3e8,]
+bedrock_small = bedrock[bedrock$area <= 3e8,]
+bedrock_big = lwgeom::st_split(bedrock_big, ukgrid)
+bedrock_big = st_collection_extract(bedrock_big, "POLYGON")
+bedrock_big$id <- as.character(sample(1:nrow(bedrock_big)))
+qtm(bedrock_big, fill = "id")
+
+foo$area2 <- as.numeric(st_area(foo))
+summary(bedrock$area)
 
 write_sf(bedrock,"data/bedrock.geojson")
 zip::zip("data/bedrock.geojson.zip", 
