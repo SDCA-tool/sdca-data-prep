@@ -1,11 +1,11 @@
-library(raster)
-library(sf)
-library(stars)
-library(tmap)
-tmap_mode("view")
-
-#dem <- read_stars("D:/OneDrive - University of Leeds/Data/opentripplanner/graphs/great-britain-NTEM/UK-dem-50m-4326.tif")
-dem <- read_stars("D:/GitHub/SDCA-tool/sdca-data-prep/data/UK-dem-50m-4326-Int16.tif")
+# library(raster)
+# library(sf)
+# library(stars)
+# library(tmap)
+# tmap_mode("view")
+# 
+# #dem <- read_stars("D:/OneDrive - University of Leeds/Data/opentripplanner/graphs/great-britain-NTEM/UK-dem-50m-4326.tif")
+# dem <- read_stars("D:/GitHub/SDCA-tool/sdca-data-prep/data/UK-dem-50m-4326-Int16.tif")
 
 
 
@@ -13,7 +13,7 @@ dem <- read_stars("D:/GitHub/SDCA-tool/sdca-data-prep/data/UK-dem-50m-4326-Int16
 #                ncol = 2, byrow = TRUE)
 # line <- st_sfc(st_linestring(line), crs = 4326)
 
-line <- read_sf("D:/OneDrive - University of Leeds/Documents/DFT Carbon Infrastructure/examples.gpkg")
+# line <- read_sf("D:/OneDrive - University of Leeds/Documents/DFT Carbon Infrastructure/examples.gpkg")
 
 extract_elevations <- function(line, dem){
   line_split <- st_segmentize(line, dfMaxLength = 50)
@@ -31,12 +31,12 @@ extract_elevations <- function(line, dem){
   return(heights)
 }
 
-bench::mark(extract_elevations(line, dem))
-
-r1 <- extract_elevations(line, dem)
-
-
-
-plot(heights$ele, type = "l", col = "black", ylim = c(-220,610))
-lines(heights$smooth, col = "blue")
-lines(heights$diff, col = "red")
+# bench::mark(extract_elevations(line, dem))
+# 
+# r1 <- extract_elevations(line, dem)
+# 
+# 
+# 
+# plot(heights$ele, type = "l", col = "black", ylim = c(-220,610))
+# lines(heights$smooth, col = "blue")
+# lines(heights$diff, col = "red")

@@ -142,6 +142,8 @@ iap$default = iap2$default
 assets_parameters <- iap[!is.na(iap$unit),]
 assets_parameters$default <- as.numeric(assets_parameters$default)
 
+assets_parameters <- unique(assets_parameters)
+
 
 assets <- assets[,c("intervention", "asset", "asset_name","include","asset_class",
                                               "asset_unit","unit_type","asset_parameters",
@@ -364,6 +366,7 @@ carbon_factors$material_type[carbon_factors$cf_name == "Plaster (Gypsum) - Gener
 interventions$intervention <- tolower(interventions$intervention)
 assets$intervention <- tolower(assets$intervention)
 assets$asset <- tolower(assets$asset)
+assets_parameters$asset <- tolower(assets_parameters$asset)
 components$asset <- tolower(components$asset)
 
 

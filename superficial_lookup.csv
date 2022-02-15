@@ -1,9 +1,9 @@
-"x"
-"CLAY, SILT AND SAND"
-"PEAT"
-"DIAMICTON"
-"SAND"
-"SAND AND GRAVEL"
-"UNKNOWN LITHOLOGY (give log description in Comments field)"
-"SILT"
-"CLAY"
+"type","id"
+"CLAY, SILT AND SAND",1
+"PEAT",2
+"DIAMICTON",3
+"SAND",4
+"SAND AND GRAVEL",5
+"UNKNOWN LITHOLOGY (give log description in Comments field)",6
+"SILT",7
+"CLAY",8

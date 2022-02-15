@@ -1,36 +1,102 @@
-2022-01-28 23:42:54 Starting data import
-2022-01-28 23:42:54 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/interventions_tabulated.xlsx
+2022-02-15 15:56:36 Starting data import
+2022-02-15 15:56:36 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions.xlsx
 
-2022-01-28 23:42:54 rows =  66 cols = 11
+2022-02-15 15:56:36 rows =  140 cols = 12
 
-2022-01-28 23:42:54 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/High_speed_rail_intervention_assets_list.xlsx
+2022-02-15 15:56:36 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions_to_assets.xlsx
 
- Sheet found: New high speed route 
- Sheet found: Station - at grade 
- Sheet found: Station - underground 
- Sheet found: Station - elevated 
- Sheet found: Track 
- Sheet found: OLE system 
- Sheet found: Point and crossings 
- Sheet found: Bridge 
- Sheet found: Overbridge 
- Sheet found: Underbridge 
- Sheet found: Green bridge 
- Sheet found: Underpass 
- Sheet found: Viaduct 
- Sheet found: Bored_Tunnel 
- Sheet found: Cut_cover_Tunnel 
- Sheet found: Mined_Tunnel 
- Sheet found: Rail maintenance depot 
- Sheet found: Rail freight terminal
-2022-01-28 23:42:55 The following  tabs in intervention_assets_list are not in interventions_tabulated: 
-Bored_Tunnel, Cut_cover_Tunnel, Mined_Tunnel
-2022-01-28 23:42:55 The following  interventions in interventions_tabulated are not tabs in intervention_assets_list : 
-Track (double), Tunnel, New standard route, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal, New metro line, Station - local - at grade, Station - local - underground, Station - local - elevated, Station - destination - at grade, Station - destination - underground, Station - destination - elevated, Tunnel, Rail maintenance yard, Single track to double track, Double track to quadruple track, Freight to passenger line, Overhead line equipment (OLE) - single track, Overhead line equipment (OLE) - twin track, Line electrification, Station - platform lengthening, Station removal
-2022-01-28 23:42:55 Imported all sheets
-2022-01-28 23:42:55 Merged all sheets into single table
+ Sheet found: HS_line_grade 
+ Sheet found: HS_line_cutting 
+ Sheet found: HS_line_embankment 
+ Sheet found: HS_line_bridge 
+ Sheet found: HS_line_viaduct 
+ Sheet found: HS_line_tunnel_bored 
+ Sheet found: HS_line_tunnel_cut_cover 
+ Sheet found: HS_line_tunnel_mined 
+ Sheet found: HS_station_grade 
+ Sheet found: HS_station_underground 
+ Sheet found: HS_station_elevated 
+ Sheet found: HS_track 
+ Sheet found: HS_OLE 
+ Sheet found: HS_PnC 
+ Sheet found: rail_overbridge_flyover_road 
+ Sheet found: rail_overbridge_A_road 
+ Sheet found: rail_overbridge_B_road 
+ Sheet found: rail_overbridge_bridleway 
+ Sheet found: rail_overbridge_footpath 
+ Sheet found: rail_overbridge_road 
+ Sheet found: rail_overbridge_rail 
+ Sheet found: rail_underbridge_road 
+ Sheet found: rail_underbridge_rail 
+ Sheet found: rail_green_bridge 
+ Sheet found: rail_underpass_footpath 
+ Sheet found: rail_underpass 
+ Sheet found: rail_maintenance_depot 
+ Sheet found: rail_freight_terminal 
+ Sheet found: Cycle_lane_painted 
+ Sheet found: Cycle_lane_stepped 
+ Sheet found: Cycle_lane_segregated 
+ Sheet found: Cycle_track_rural 
+ Sheet found: Cycle_track_urban 
+ Sheet found: Cycle_upgrade_stepped 
+ Sheet found: Cycle_upgrade_segregated 
+ Sheet found: Cycle_upgrade_rail_cycle_path 
+ Sheet found: Cycle_stands_open 
+ Sheet found: Cycle_stands_roof 
+ Sheet found: Cycle_docking_station 
+ Sheet found: Cycle_secure_parking
+2022-02-15 15:56:36 The following  tabs in interventions_to_assets are not in interventions: 
+HS_track, HS_OLE, HS_PnC, rail_overbridge_flyover_road, rail_overbridge_A_road, rail_overbridge_B_road, rail_overbridge_bridleway, rail_overbridge_footpath, rail_green_bridge, rail_underpass_footpath, rail_underpass, rail_maintenance_depot, rail_freight_terminal, Cycle_upgrade_stepped, Cycle_upgrade_segregated, Cycle_upgrade_rail_cycle_path, Cycle_stands_roof
+2022-02-15 15:56:36 The following  interventions in interventions are not tabs in interventions_to_assets : 
+Cycle_parking_roof
+2022-02-15 15:56:36 Wrong column names in HS_line_tunnel_bored
+ missing: include
+2022-02-15 15:56:36 Wrong column names in HS_line_tunnel_cut_cover
+ missing: include
+2022-02-15 15:56:36 Wrong column names in HS_line_tunnel_mined
+ missing: include
+2022-02-15 15:56:37 Wrong column names in HS_station_elevated
+ missing: include
+2022-02-15 15:56:37 Wrong column names in rail_green_bridge
+ missing: 
+2022-02-15 15:56:37 Wrong column names in rail_underpass_footpath
+ missing: 
+2022-02-15 15:56:37 Wrong column names in rail_underpass
+ missing: 
+2022-02-15 15:56:37 Wrong column names in rail_maintenance_depot
+ missing: include
+2022-02-15 15:56:37 Wrong column names in rail_freight_terminal
+ missing: include
+2022-02-15 15:56:37 Wrong column names in Cycle_lane_painted
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_lane_stepped
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_lane_segregated
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_track_rural
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_track_urban
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_upgrade_stepped
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_upgrade_segregated
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_upgrade_rail_cycle_path
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_stands_open
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_stands_roof
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_docking_station
+ missing: include
+2022-02-15 15:56:38 Wrong column names in Cycle_secure_parking
+ missing: include
+2022-02-15 15:56:38 Imported all sheets
+2022-02-15 15:56:38 Merged all sheets into single table
  Column names are 
+intervention 
 asset 
+asset_name 
 include 
 asset_class 
 asset_unit 
@@ -52,28 +118,75 @@ span_default
 volume_unit 
 volume_default 
 width_unit 
-width_default 
-intervention
-2022-01-28 23:42:55 Creating parameters table
-2022-01-28 23:42:55 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/example_asset.xlsx
+width_default
+2022-02-15 15:56:38 Creating parameters table
+2022-02-15 15:56:38 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/assets.xlsx
 
- Sheet found: Viaduct_raw_info_Colne 
- Sheet found: Viaduct_processed_Colne 
- Sheet found: Embankment_raw_info_ColneSouth 
- Sheet found: Embankment_processed_info_ColnS 
- Sheet found: Embankment_raw_info_ColneNorth 
- Sheet found: Embankment_processed_info_ColnN 
- Sheet found: Viaduct 
- Sheet found: Embankment 
- Sheet found: Overbridge
-2022-01-28 23:42:55 Manually limted to following sheets 
-Viaduct 
-Embankment 
-Overbridge
-2022-01-28 23:42:55 Imported all sheets
-2022-01-28 23:42:55 Merged all sheets into single table
+ Sheet found: HS_tunnel_portal 
+ Sheet found: HS_cut_cover_tunnel 
+ Sheet found: HS_bored_tunnel 
+ Sheet found: HS_mined_tunnel 
+ Sheet found: HS_line_cutting 
+ Sheet found: HS_embankment 
+ Sheet found: HS_bridge 
+ Sheet found: HS_viaduct 
+ Sheet found: HS_line_viaduct_BU 
+ Sheet found: HS_Rail_Underpass 
+ Sheet found: HS_culvert 
+ Sheet found: HS_culvert_BU 
+ Sheet found: HS_shaft_BU 
+ Sheet found: HS_System_railheads 
+ Sheet found: HS_maintenance_access_Point 
+ Sheet found: HS_emergency_access_point 
+ Sheet found: HS_building_elevated 
+ Sheet found: HS_Track_double 
+ Sheet found: HS_mitigation_earthworks 
+ Sheet found: HS_retained_cutting_BU 
+ Sheet found: HS_underbridge_BU 
+ Sheet found: HS_tunnel_portal_BU 
+ Sheet found: HS_overbridge_BU 
+ Sheet found: HS_mined_tunnel_BU 
+ Sheet found: HS_boxstructure_BU 
+ Sheet found: HS_bored_tunnel_BU 
+ Sheet found: HS_cutting_BU 
+ Sheet found: HS_embankment_BU 
+ Sheet found: HS_OLE 
+ Sheet found: HS_PnC 
+ Sheet found: RAIL_car_park 
+ Sheet found: RAIL_Carriageway 
+ Sheet found: RAIL_circulation_feature 
+ Sheet found: RAIL_track 
+ Sheet found: RAIL_OLE 
+ Sheet found: RAIL_PNC 
+ Sheet found: RAIL_building 
+ Sheet found: RAIL_underpass 
+ Sheet found: RAIL_underpass_footpath 
+ Sheet found: RAIL_UB 
+ Sheet found: RAIL_OB_rail 
+ Sheet found: RAIL_Green_bridge 
+ Sheet found: RAIL_OB_typical 
+ Sheet found: RAIL_OB_flyover_road 
+ Sheet found: RAIL_OB_B_road 
+ Sheet found: RAIL_OB_A_road 
+ Sheet found: RAIL_OB_bridleway 
+ Sheet found: RAIL_OB_footpath 
+ Sheet found: Overbridge 
+ Sheet found: Cycle_lane_painted 
+ Sheet found: Cycle_lane_stepped 
+ Sheet found: Cycle_lane_segregrated 
+ Sheet found: Cycle_track_rural 
+ Sheet found: Cycle_track_urban 
+ Sheet found: Cycle_upgrade_stepped 
+ Sheet found: Cycle_upgrade_segregated 
+ Sheet found: Cycle_upgrade_rail_cycle_path 
+ Sheet found: Cycle_stands_roof 
+ Sheet found: Cycle_stands_open 
+ Sheet found: Cycle_secure_parking 
+ Sheet found: Cycle_docking_station
+2022-02-15 15:56:41 Imported all sheets
+2022-02-15 15:56:41 Merged all sheets into single table
  Column names are 
-intervention_asset 
+asset 
 works_category_level_1 
 item 
 quantity 
@@ -86,1070 +199,87 @@ no_granular_data_A1-A3
 no_granular_data_A4 
 no_granular_data_B2 
 no_granular_data_B4
-2022-01-28 23:42:55 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/Examples for Malcolm 250122/carbon_factors_library.csv
+2022-02-15 15:56:41 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/carbon_factors_library.csv
 
  Duplicated carbon factor names found
-Aluminium - Cast Products 
-Aluminium - Extruded 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Aluminium - General 
-Bus - Average 
-Car - Average - Unknown Fuel 
-Car - Average - Diesel 
-Car - Average - Petrol 
-Motorbike: Unknown Size 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Spirit 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Aviation Turbine Fuel 
-Taxi Travel - Black Cab 
-Taxi Travel - Black Cab 
-Taxi Travel - Black Cab 
-Bricks - General 
-Carpet - General 
-Coach 
-Coal (Domestic) 
-Coal (Domestic) 
-Coal (Domestic) 
-Coal (Domestic) 
-Coal (Domestic) 
-Coal (Electricity Generation) 
-Coal (Electricity Generation) 
-Coal (Electricity Generation) 
-Coal (Electricity Generation) 
-Coal (Electricity Generation) 
-Coal (Industrial) 
-Coal (Industrial) 
-Coal (Industrial) 
-Coal (Industrial) 
-Coal (Industrial) 
-Coking Coal 
-Coking Coal 
-Coking Coal 
-Coking Coal 
-Coking Coal 
-Diesel 
-Diesel 
-Diesel 
-Diesel 
-Diesel 
-Diesel 
-Diesel 
-Passenger Flight: UK Domestic. Average 
-Passenger Flight: UK Domestic. Average 
-Passenger Flight: UK Domestic. Average 
-Car - Dual Purpose 4*4 - Diesel 
-Car - Dual Purpose 4*4 - Diesel 
-Car - Dual Purpose 4*4 - Diesel 
-Car - Duel Purpose 4*4 - Petrol 
-Car - Duel Purpose 4*4 - Petrol 
-Car - Duel Purpose 4*4 - Petrol 
-Car - Duel Purpose 4*4 - Unknown Fuel 
-Car - Duel Purpose 4*4 - Unknown Fuel 
-Car - Duel Purpose 4*4 - Unknown Fuel 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Electricity 
-Car - Executive - Unknown Fuel 
-Car - Executive - Unknown Fuel 
-Car - Executive - Unknown Fuel 
-Car - Executive - Diesel 
-Car - Executive - Diesel 
-Car - Executive - Diesel 
-Car - Executive - Petrol 
-Car - Executive - Petrol 
-Car - Executive - Petrol 
-Passenger Ferry (Large RoPax) - Unspecified Passengers 
-Passenger Ferry (Large RoPax) - Car Passengers 
-Passenger Ferry (Large RoPax) - Foot Passengers 
-Air Freight: Short-haul 
-Air Freight: Short-haul 
-Air Freight: Short-haul 
-Air Freight: Domestic 
-Air Freight: Domestic 
-Air Freight: Domestic 
-Air Freight: Long-haul 
-Air Freight: Long-haul 
-Air Freight: Long-haul 
-Freight - Van/LCV - Average (=3.5t) - Unknown Fuel 
-Freight - Van/LCV - Average (=3.5t) - Diesel 
-Freight - Van/LCV - Class I (=1.305t) - Diesel 
-Freight - Van/LCV - Class II (1.305-1.74t) - Diesel 
-Freight - Van/LCV - Class III (1.74-3.5t) - Diesel 
-Road Freight: Articulated HGV. 3.5 - 33t. 0% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 100% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 100% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 100% Load 
-Road Freight: Articulated HGV. >33t. 0% Load 
-Road Freight: Articulated HGV. >33t. 100% Load 
-Road Freight: Articulated HGV. >33t. 100% Load 
-Road Freight: Articulated HGV. >33t. 100% Load 
-Road Freight: Articulated HGV. >33t. 50% Load 
-Road Freight: Articulated HGV. >33t. 50% Load 
-Road Freight: Articulated HGV. >33t. 50% Load 
-Road Freight: Rigid HGV. >17t. 0% Load 
-Road Freight: Rigid HGV. >17t. 100% Load 
-Road Freight: Rigid HGV. >17t. 100% Load 
-Road Freight: Rigid HGV. >17t. 100% Load 
-Road Freight: Rigid HGV. >17t. 50% Load 
-Road Freight: Rigid HGV. >17t. 50% Load 
-Road Freight: Rigid HGV. >17t. 50% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 0% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 100% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 100% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 100% Load 
-Freight - HGV - Rigid (>3.5-7.5t) - 40% Laden - Diesel 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 50% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 50% Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. 50% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 0% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 100% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 100% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 100% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 50% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 50% Load 
-Road Freight: Rigid HGV. 7.5 - 17t. 50% Load 
-Freight - Van/LCV (=3.5t) - LPG or CNG 
-Freight - Van/LCV (=1.25t) - Petrol 
-Sea Freight: Large RoPax Ferry 
-Fuel Oil 
-Fuel Oil 
-Fuel Oil 
-Fuel Oil 
-Fuel Oil 
-Fuel Oil 
-Fuel Oil 
-Gas Oil 
-Gas Oil 
-Gas Oil 
-Gas Oil 
-Gas Oil 
-Gas Oil 
-Gas Oil 
-Rail Travel - International Rail (Eurostar) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Burning Oil (Kerosene / Paraffin) 
-Car - Large (>2.0 litres) - Diesel 
-Car - Large (>2.0 litres) - Petrol 
-Car - Large - Hybrid 
-Motorbike: Large. >500cc 
-Rail Travel - Light Rail & Tram 
-Bus - Local Bus (exc London) 
-Train Travel - London Underground (Tube) 
-Bus - London Bus (only) 
-Passenger Flight: Long-haul (UK). Average 
-Passenger Flight: Long-haul (UK). Average 
-Passenger Flight: Long-haul (UK). Average 
-Passenger Flight: Long-haul (UK). Business 
-Passenger Flight: Long-haul (UK). Business 
-Passenger Flight: Long-haul (UK). Business 
-Passenger Flight: Long-haul (UK). Economy 
-Passenger Flight: Long-haul (UK). Economy 
-Passenger Flight: Long-haul (UK). Economy 
-Passenger Flight: Long-haul (UK). First 
-Passenger Flight: Long-haul (UK). First 
-Passenger Flight: Long-haul (UK). First 
-Passenger Flight: Long-haul (UK). Premium Economy 
-Passenger Flight: Long-haul (UK). Premium Economy 
-Passenger Flight: Long-haul (UK). Premium Economy 
-Car - Lower Medium - Unknown Fuel 
-Car - Lower Medium - Unknown Fuel 
-Car - Lower Medium - Unknown Fuel 
-Car - Lower Medium - Diesel 
-Car - Lower Medium - Diesel 
-Car - Lower Medium - Diesel 
-Car - Lower Medium - Petrol 
-Car - Lower Medium - Petrol 
-Car - Lower Medium - Petrol 
-LPG 
-LPG 
-LPG 
-LPG 
-LPG 
-LPG 
-LPG 
-Lubricants 
-Lubricants 
-Lubricants 
-Lubricants 
-Lubricants 
-Lubricants 
-Car - Luxury - Diesel 
-Car - Luxury - Diesel 
-Car - Luxury - Diesel 
-Car - Luxury - Petrol 
-Car - Luxury - Petrol 
-Car - Luxury - Petrol 
-Car - Luxury - Unknown Fuel 
-Car - Luxury - Unknown Fuel 
-Car - Luxury - Unknown Fuel 
-Car - Medium (1.7 - 2.0 litres) - Diesel 
-Car - Medium (1.4-2.0 litres) - Petrol 
-Car - Medium - Hybrid 
-Motorbike: Medium. 125-500cc 
-Car - Mini - Diesel 
-Car - Mini - Diesel 
-Car - Mini - Diesel 
-Car - Mini - Petrol 
-Car - Mini - Petrol 
-Car - Mini - Petrol 
-Car - Mini - Unknown Fuel 
-Car - Mini - Unknown Fuel 
-Car - Mini - Unknown Fuel 
-Car - MPV - Diesel 
-Car - MPV - Diesel 
-Car - MPV - Diesel 
-Car - MPV - Petrol 
-Car - MPV - Petrol 
-Car - MPV - Petrol 
-Car - MPV - Unknown Fuel 
-Car - MPV - Unknown Fuel 
-Car - MPV - Unknown Fuel 
-Naphtha 
-Naphtha 
-Naphtha 
-Naphtha 
-Naphtha 
-Naphtha 
-Rail Travel - National Rail 
-Natural Gas 
-Natural Gas 
-Natural Gas 
-Natural Gas 
-Natural Gas 
-Natural Gas 
-Natural Gas 
-CNG 
-CNG 
-CNG 
-CNG 
-CNG 
-CNG 
-CNG 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petroleum Gas - Other 
-Petrol 
-Petrol 
-Petrol 
-Petrol 
-Petrol 
-Petrol 
-Petrol 
-Petrol Engine - 2 Stroke - 100kW / 135hp 
-Petrol Engine - 2 Stroke - 120kW / 162hp 
-Petrol Engine - 2 Stroke - 140kW / 189hp 
-Petrol Engine - 2 Stroke - 160kW / 216hp 
-Petrol Engine - 2 Stroke - 180kW / 243hp 
-Petrol Engine - 2 Stroke - 200kW / 270hp 
-Petrol Engine - 2 Stroke - 20kW / 27hp 
-Petrol Engine - 2 Stroke - 225kW / 303.75hp 
-Petrol Engine - 2 Stroke - 250kW / 337.5hp 
-Petrol Engine - 2 Stroke - 25kW / 33.75hp 
-Petrol Engine - 2 Stroke - 275kW / 371.25hp 
-Petrol Engine - 2 Stroke - 300kW / 405hp 
-Petrol Engine - 2 Stroke - 30kW / 40.5hp 
-Petrol Engine - 2 Stroke - 35kW / 47.25hp 
-Petrol Engine - 2 Stroke - 40kW / 54hp 
-Petrol Engine - 2 Stroke - 45kW / 60.75hp 
-Petrol Engine - 2 Stroke - 50kW / 67.5hp 
-Petrol Engine - 2 Stroke - 55kW / 74.25hp 
-Petrol Engine - 2 Stroke - 60kW / 81hp 
-Petrol Engine - 2 Stroke - 65kW / 87.75hp 
-Petrol Engine - 2 Stroke - 70kW / 94.5hp 
-Petrol Engine - 2 Stroke - 75kW / 101.25hp 
-Petrol Engine - 2 Stroke - 80kW / 108hp 
-Petrol Engine - 2 Stroke - 85kW / 114.75hp 
-Petrol Engine - 2 Stroke - 90kW / 121.5hp 
-Petrol Engine - 2 Stroke - 95kW / 128.25hp 
-Petrol Engine - 4 Stroke - 100kW / 135hp 
-Petrol Engine - 4 Stroke - 120kW / 162hp 
-Petrol Engine - 4 Stroke - 140kW / 189hp 
-Petrol Engine - 4 Stroke - 160kW / 216hp 
-Petrol Engine - 4 Stroke - 180kW / 243hp 
-Petrol Engine - 4 Stroke - 200kW / 270hp 
-Petrol Engine - 4 Stroke - 20kW / 27hp 
-Petrol Engine - 4 Stroke - 225kW / 303.75hp 
-Petrol Engine - 4 Stroke - 250kW / 337.5hp 
-Petrol Engine - 4 Stroke - 25kW / 33.75hp 
-Petrol Engine - 4 Stroke - 275kW / 371.25hp 
-Petrol Engine - 4 Stroke - 300kW / 405hp 
-Petrol Engine - 4 Stroke - 30kW / 40.5hp 
-Petrol Engine - 4 Stroke - 35kW / 47.25hp 
-Petrol Engine - 4 Stroke - 40kW / 54hp 
-Petrol Engine - 4 Stroke - 45kW / 60.75hp 
-Petrol Engine - 4 Stroke - 50kW / 67.5hp 
-Petrol Engine - 4 Stroke - 55kW / 74.25hp 
-Petrol Engine - 4 Stroke - 60kW / 81hp 
-Petrol Engine - 4 Stroke - 65kW / 87.75hp 
-Petrol Engine - 4 Stroke - 70kW / 94.5hp 
-Petrol Engine - 4 Stroke - 75kW / 101.25hp 
-Petrol Engine - 4 Stroke - 80kW / 108hp 
-Petrol Engine - 4 Stroke - 85kW / 114.75hp 
-Petrol Engine - 4 Stroke - 90kW / 121.5hp 
-Petrol Engine - 4 Stroke - 95kW / 128.25hp 
-Petroleum Coke 
-Petroleum Coke 
-Petroleum Coke 
-Petroleum Coke 
-Petroleum Coke 
-HDPE - General 
-LDPE - General 
-Plywood - General 
-Refinery - Miscellaneous 
-Refinery - Miscellaneous 
-Refinery - Miscellaneous 
-Refinery - Miscellaneous 
-Refinery - Miscellaneous 
-Taxi Travel - Regular Taxi 
-Taxi Travel - Regular Taxi 
-Taxi Travel - Regular Taxi 
-Passenger Flight: Short-haul (UK). Average 
-Passenger Flight: Short-haul (UK). Average 
-Passenger Flight: Short-haul (UK). Average 
-Passenger Flight: Short-haul (UK). Business 
-Passenger Flight: Short-haul (UK). Business 
-Passenger Flight: Short-haul (UK). Business 
-Passenger Flight: Short-haul (UK). Economy 
-Passenger Flight: Short-haul (UK). Economy 
-Passenger Flight: Short-haul (UK). Economy 
-Car - Small (<1.7 litre) - Diesel 
-Car - Small (<1.4 litre) - Petrol 
-Motorbike: Small. <125cc 
-Car - Sports - Diesel 
-Car - Sports - Diesel 
-Car - Sports - Diesel 
-Car - Sports - Petrol 
-Car - Sports - Petrol 
-Car - Sports - Petrol 
-Car - Sports - Unknown Fuel 
-Car - Sports - Unknown Fuel 
-Car - Sports - Unknown Fuel 
-Car - Supermini - Unknown Fuel 
-Car - Supermini - Unknown Fuel 
-Car - Supermini - Unknown Fuel 
-Car - Supermini - Diesel 
-Car - Supermini - Diesel 
-Car - Supermini - Diesel 
-Car - Supermini - Petrol 
-Car - Supermini - Petrol 
-Car - Supermini - Petrol 
-Car - Upper Medium - Diesel 
-Car - Upper Medium - Diesel 
-Car - Upper Medium - Diesel 
-Car - Upper Medium - Petrol 
-Car - Upper Medium - Petrol 
-Car - Upper Medium - Petrol 
-Car - Upper Medium - Unknown Fuel 
-Car - Upper Medium - Unknown Fuel 
-Car - Upper Medium - Unknown Fuel 
-Water Supply 
-Water Treatment 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Aluminium-Clad Timber Framed - Lower 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Aluminium-Clad Timber Framed - Mid 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Aluminium-Clad Timber Framed - Upper 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Aluminium Framed 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - PVC Framed - Lower 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - PVC Framed - Mid 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - PVC Framed - Upper 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Timber Framed - Lower 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Timber Framed - Mid 
-Windows - 1.2mx1.2m Double Glazed (Air or Argon Filled) - Timber Framed - Upper 
-Windows - 1.2mx1.2m Single Glazed Timber Frame Unit 
-Windows - Krypton Filled - Add on 
-Windows - Xenon Filled - Add on 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Gross 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Net 
-Grey Cement - Wet 
-Grey Cement - Semi-wet/Semi-dry 
-Grey Cement - Semi-wet/Semi-dry 
-Grey Cement - Semi-wet/Semi-dry 
-Grey Cement - Dry without preheater - Long dry kiln 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater without precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Grey Cement - Dry with preheater and precalciner 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Gross 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-Cement - All types - Net 
-LNG 
-LNG 
-LNG 
-LNG 
-LNG 
-LNG 
-LNG 
-Polystyrene - General 
-Biodiesel 
-Biodiesel 
-Biodiesel 
-Bioethanol 
-Bioethanol 
-Bioethanol 
-Biomethane 
-Biomethane 
-Biomethane 
-Fuel - Wood Logs 
-Fuel - Wood Chips 
-Fuel - Wood Pellets 
-Fuel - Grasses/Straw 
-Car - Average - Hybrid 
-Car - Medium - LPG 
-Car - Large - LPG 
-Car - Average - LPG 
-Car - Medium - CNG 
-Car - Large - CNG 
-Car - Average - CNG 
-Car - Small - Unknown Fuel 
-Car - Medium - Unknown Fuel 
-Car - Large - Unknown Fuel 
-Van: Class I. <1.305t. Petrol. 
-Van: Class I. <1.305t. Petrol. 
-Van: Class I. <1.305t. Petrol. 
-Van: Class II. 1.305-1.74t. Petrol. 
-Van: Class II. 1.305-1.74t. Petrol. 
-Van: Class II. 1.305-1.74t. Petrol. 
-Van: Class III. 1.74-3.5t. Petrol. 
-Van: Class III. 1.74-3.5t. Petrol. 
-Van: Class III. 1.74-3.5t. Petrol. 
-Van: Average size. <3.5t. Petrol. 
-Van: Average size. <3.5t. Petrol. 
-Van: Average size. <3.5t. Petrol. 
-Van: Class I. <1.305t. Diesel. 
-Van: Class I. <1.305t. Diesel. 
-Van: Class I. <1.305t. Diesel. 
-Van: Class II. 1.305-1.74t. Diesel. 
-Van: Class II. 1.305-1.74t. Diesel. 
-Van: Class II. 1.305-1.74t. Diesel. 
-Van: Class III. 1.74-3.5t. Diesel. 
-Van: Class III. 1.74-3.5t. Diesel. 
-Van: Class III. 1.74-3.5t. Diesel. 
-Van: Average size. <3.5t. Diesel. 
-Van: Average size. <3.5t. Diesel. 
-Van: Average size. <3.5t. Diesel. 
-Van: Average size. <3.5t. LPG. 
-Van: Average size. <3.5t. LPG. 
-Van: Average size. <3.5t. LPG. 
-Van: Average size. <3.5t. CNG. 
-Van: Average size. <3.5t. CNG. 
-Van: Average size. <3.5t. CNG. 
-Van: Average size. <3.5t. Unknown fuel. 
-Van: Average size. <3.5t. Unknown fuel. 
-Van: Average size. <3.5t. Unknown fuel. 
-Freight - Class I (=1.305t) - 37% Laden - Petrol 
-Freight - Class I (=1.305t) - 37% Laden - Petrol 
-Freight - Class I (=1.305t) - 37% Laden - Petrol 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Petrol 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Petrol 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Petrol 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Petrol 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Petrol 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Petrol 
-Freight - Average (=3.5t) - 40% Laden - Petrol 
-Freight - Average (=3.5t) - 40% Laden - Petrol 
-Freight - Average (=3.5t) - 40% Laden - Petrol 
-Freight - Class I (=1.305t) - 37% Laden - Diesel 
-Freight - Class I (=1.305t) - 37% Laden - Diesel 
-Freight - Class I (=1.305t) - 37% Laden - Diesel 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Diesel 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Diesel 
-Freight - Class II (1.305t-1.74t) - 37% Laden - Diesel 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Diesel 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Diesel 
-Freight - Class III (1.74t-3.5t) - 41% Laden - Diesel 
-Freight - Average (=3.5t) - 40% Laden - Diesel 
-Freight - Average (=3.5t) - 40% Laden - Diesel 
-Freight - Average (=3.5t) - 40% Laden - Diesel 
-Freight - (=3.5t) - 40% Laden - LPG 
-Freight - (=3.5t) - 40% Laden - LPG 
-Freight - (=3.5t) - 40% Laden - LPG 
-Freight - (=3.5t) - 40% Laden - CNG 
-Freight - (=3.5t) - 40% Laden - CNG 
-Freight - (=3.5t) - 40% Laden - CNG 
-Freight - All Vehicles - Average (=3.5t) - 40% Laden 
-Freight - All Vehicles - Average (=3.5t) - 40% Laden 
-Freight - All Vehicles - Average (=3.5t) - 40% Laden 
-Road Freight: Rigid HGV. 3.5 - 7.5t. Average Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. Average Load 
-Road Freight: Rigid HGV. 3.5 - 7.5t. Average Load 
-Road Freight: Rigid HGV. 7.5 - 17t. Average Load 
-Road Freight: Rigid HGV. 7.5 - 17t. Average Load 
-Road Freight: Rigid HGV. 7.5 - 17t. Average Load 
-Road Freight: Rigid HGV. >17t. Average Load 
-Road Freight: Rigid HGV. >17t. Average Load 
-Road Freight: Rigid HGV. >17t. Average Load 
-Road Freight: Rigid HGV. Unknown size. Average Load 
-Road Freight: Rigid HGV. Unknown size. Average Load 
-Road Freight: Rigid HGV. Unknown size. Average Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 50% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 50% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. 50% Load 
-Road Freight: Articulated HGV. 3.5 - 33t. Average Load 
-Road Freight: Articulated HGV. 3.5 - 33t. Average Load 
-Road Freight: Articulated HGV. 3.5 - 33t. Average Load 
-Road Freight: Articulated HGV. >33t. Average Load 
-Road Freight: Articulated HGV. >33t. Average Load 
-Road Freight: Articulated HGV. >33t. Average Load 
-Road Freight: Articulated HGV. Unknown size. Average Load 
-Road Freight: Articulated HGV. Unknown size. Average Load 
-Road Freight: Articulated HGV. Unknown size. Average Load 
-Road Freight: HGV. Unknown size. Average Load 
-Road Freight: HGV. Unknown size. Average Load 
-Road Freight: HGV. Unknown size. Average Load 
-Rail Freight 
-Sea Freight: Crude Oil Tanker. >200,000 dwt. 
-Sea Freight: Crude Oil Tanker. 120,000-199,999 dwt. 
-Sea Freight: Crude Oil Tanker. 80,000-119,999 dwt. 
-Sea Freight: Crude Oil Tanker. 60,000-79,999 dwt. 
-Sea Freight: Crude Oil Tanker. 10,000-59,999 dwt. 
-Sea Freight: Crude Oil Tanker. 0-9,999 dwt. 
-Sea Freight: Crude Oil Tanker. Average dwt. 
-Sea Freight: Products Tanker. >60,000 dwt. 
-Sea Freight: Products Tanker. 20,000-59,999 dwt. 
-Sea Freight: Products Tanker. 5,000-9,999 dwt. 
-Sea Freight: Products Tanker. 0-4,999 dwt. 
-Sea Freight: Products Tanker. Average dwt. 
-Sea Freight: Chemical Tanker. >20,000 dwt. 
-Sea Freight: Chemical Tanker. 10,000-19,999 dwt. 
-Sea Freight: Chemical Tanker. 5,000-9,999 dwt. 
-Sea Freight: Chemical Tanker. 0-4,999 dwt. 
-Sea Freight: Chemical Tanker. Average dwt. 
-Sea Freight: LPG Tanker. >50,000 m3. 
-Sea Freight: LPG Tanker. 0-49,999 m3. 
-Sea Freight: LNG Tanker. >200,000 m3. 
-Sea Freight: LNG Tanker. 0-199,999 m3. 
-Sea Freight: LNG Tanker. Average m3. 
-Sea Freight: Bulk Carrier. >200,000 dwt. 
-Sea Freight: Bulk Carrier. 100,000-199,999 dwt. 
-Sea Freight: Bulk Carrier. 60,000-99,999 dwt. 
-Sea Freight: Bulk Carrier. 35,000-59,999 dwt. 
-Sea Freight: Bulk Carrier. 10,000-34,999 dwt. 
-Sea Freight: Bulk Carrier. 0-9,999 dwt. 
-Sea Freight: Bulk Carrier. Average dwt. 
-Sea Freight: General Cargo. >10,000 dwt. 
-Sea Freight: General Cargo. 5,000-9,999 dwt. 
-Sea Freight: General Cargo. 0-4,999 dwt. 
-Sea Freight: General Cargo. >10,000 dwt + >100 TEU. 
-Sea Freight: General Cargo. 5,000-9,999 dwt + >100 TEU. 
-Sea Freight: General Cargo. 0-4,999 dwt + >100 TEU. 
-Sea Freight: General Cargo. Average dwt. 
-Sea Freight: Refrigerated Cargo. All dwt. 
-Sea Freight: Container. >8,000 TEU. 
-Sea Freight: Container. 5,000-7,999 TEU. 
-Sea Freight: Container. 3,000-4,999 TEU. 
-Sea Freight: Container. 2,000-2,999 TEU. 
-Sea Freight: Container. 1,000-1,999 TEU. 
-Sea Freight: Container. 0-999 TEU. 
-Sea Freight: Container. Average dwt. 
-Sea Freight: Vehicle Transport. >4,000 CEU. 
-Sea Freight: Vehicle Transport. 0-3,999 CEU. 
-Sea Freight: Vehicle Transport. Average CEU. 
-Sea Freight: Ro-Ro Ferry. >2,000 LM. 
-Sea Freight: Ro-Ro Ferry. 0-1,999 LM. 
-Sea Freight: Ro-Ro Ferry. Average LM. 
-Asphalt - 4% Bitumen Binder 
-Asphalt - 4% Bitumen Binder 
-Asphalt - 5% Bitumen Binder 
-Asphalt - 5% Bitumen Binder 
-Asphalt - 6% Bitumen Binder 
-Asphalt - 6% Bitumen Binder 
-Asphalt - 7% Bitumen Binder 
-Asphalt - 7% Bitumen Binder 
-Cement - CEM I - Portland Cement 
-Cement - General 
-Mortar - 1:5 Cement:Sand Mix - UK Average 
-Concrete - CEM I Cement Content 120kg/m3 
-Concrete - CEM I Cement Content 200kg/m3 
-Concrete - CEM I Cement Content 300kg/m3 
-Concrete - CEM I Cement Content 400kg/m3 
-Concrete - CEM I Cement Content 500kg/m3 
-Concrete - GEN2 - 12/15 MPa - 15% Fly Ash 
-Concrete - GEN2 - 12/15 MPa - 30% Fly Ash 
-Concrete - GEN3 - 16/20 MPa - Average UK Additions 
-Concrete - GEN3 - 16/20 MPa - 15% Fly Ash 
-Concrete - GEN3 - 16/20 MPa - 30% Fly Ash 
-Concrete - 20/25 MPa - Average UK Additions 
-Concrete - RC20/25 MPa - CEM I - 0% Replacement 
-Concrete - RC20/25 MPa - 25% Blast Furnace Slag 
-Concrete - RC20/25 MPa - 50% Blast Furnace Slag 
-Concrete - RC20/25 MPa - 15% Fly Ash 
-Concrete - RC20/25 MPa - 30% Fly Ash 
-Concrete - 25/30 MPa - Average UK Additions 
-Concrete - RC25/30 MPa - CEM I - 0% Replacement 
-Concrete - RC25/30 MPa - 25% Blast Furnace Slag 
-Concrete - RC25/30 MPa - 50% Blast Furnace Slag 
-Concrete - PAV1 - 25/30 MPa - 15% Fly Ash 
-Concrete - PAV1 - 25/30 MPa - 30% Fly Ash 
-Concrete - RC25/30 MPa - 15% Fly Ash 
-Concrete - RC25/30 MPa - 30% Fly Ash 
-Concrete - 28/35 MPa - Average UK Additions 
-Concrete - RC28/35 MPa - CEM I - 0% Replacement 
-Concrete - RC28/35 MPa - 25% Blast Furnace Slag 
-Concrete - RC28/35 MPa - 50% Blast Furnace Slag 
-Concrete - PAV2 - 28/35 MPa - 15% Fly Ash 
-Concrete - PAV2 - 28/35 MPa - 30% Fly Ash 
-Concrete - RC28/35 MPa - 15% Fly Ash 
-Concrete - RC28/35 MPa - 30% Fly Ash 
-Concrete - 32/40 MPa - Average UK Additions 
-Concrete - RC32/40 MPa - CEM I - 0% Replacement 
-Concrete - RC32/40 MPa - 25% Blast Furnace Slag 
-Concrete - RC32/40 MPa - 50% Blast Furnace Slag 
-Concrete - RC32/40 MPa - 15% Fly Ash 
-Timber - Oriented Strand Board (OSB) - General (fos only) 
-Concrete - RC32/40 MPa - 30% Fly Ash 
-Timber - Oriented Strand Board (OSB) - General 
-Concrete - 40/50 MPa - Average UK Additions 
-Concrete - RC40/50 MPa - CEM I - 0% Replacement 
-Steel - Section - R.O.W. Average Recycled Content 
-Concrete - RC40/50 MPa - 25% Blast Furnace Slag 
-Steel - Plate - R.O.W. Average Recycled Content 
-Concrete - RC40/50 MPa - 50% Blast Furnace Slag 
-Concrete - RC40/50 MPa - 15% Fly Ash 
-Concrete - RC40/50 MPa - 30% Fly Ash 
-Steel - Pipe - R.O.W. Average Recycled Content 
-Steel - General - R.O.W. Average Recycled Content 
-Concrete - GEN0 - 6/8 MPa - 15% Fly Ash 
-Concrete - GEN0 - 6/8 MPa - 30% Fly Ash 
-Steel - Coil - R.O.W. Average Recycled Content 
-Concrete - GEN1 - 8/10 MPa - 15% Fly Ash 
-Concrete - GEN1 - 8/10 MPa - 30% Fly Ash 
-Steel - Coil - Galvanised - R.O.W. Average Recycled Content 
-Steel - Bar and Rod - R.O.W. Average Recycled Content 
-Plywood - General (fos only) 
-Sea Freight: Products Tanker. 10,000-19,999 dwt. 
-Fuel - Biogas 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Petrol (biofuel blend) 
-Car - Small - Hybrid 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - residual oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Processed fuel oils - distillate oil 
-Waste oils 
-Waste oils 
-Waste oils 
-Waste oils 
-Waste oils 
-Waste oils 
-Marine gas oil 
-Marine gas oil 
-Marine gas oil 
-Marine gas oil 
-Marine gas oil 
-Marine gas oil 
-Marine gas oil 
-Marine fuel oil 
-Marine fuel oil 
-Marine fuel oil 
-Marine fuel oil 
-Marine fuel oil 
-Marine fuel oil 
-Marine fuel oil 
-Electricity 2017 
-Heat and Steam - Onsite 
-Sea Freight: LPG Tanker. Average dwt. 
-Air Freight: International non-UK 
-Air Freight: International non-UK 
-Air Freight: International non-UK 
-Road Freight: Articulated HGV. Unknown size. 0% Load 
-Road Freight: Articulated HGV. Unknown size. 100% Load 
-Road Freight: Articulated HGV. Unknown size. 100% Load 
-Road Freight: Articulated HGV. Unknown size. 100% Load 
-Road Freight: Articulated HGV. Unknown size. 50% Load 
-Road Freight: Articulated HGV. Unknown size. 50% Load 
-Road Freight: Articulated HGV. Unknown size. 50% Load 
-Road Freight: HGV. Unknown size. 0% Load 
-Road Freight: HGV. Unknown size. 100% Load 
-Road Freight: HGV. Unknown size. 100% Load 
-Road Freight: HGV. Unknown size. 100% Load 
-Road Freight: HGV. Unknown size. 50% Load 
-Road Freight: HGV. Unknown size. 50% Load 
-Road Freight: HGV. Unknown size. 50% Load 
-Road Freight: Rigid HGV. Unknown size. 0% Load 
-Road Freight: Rigid HGV. Unknown size. 100% Load 
-Road Freight: Rigid HGV. Unknown size. 100% Load 
-Road Freight: Rigid HGV. Unknown size. 100% Load 
-Road Freight: Rigid HGV. Unknown size. 50% Load 
-Road Freight: Rigid HGV. Unknown size. 50% Load 
-Road Freight: Rigid HGV. Unknown size. 50% Load 
-Van: Class I. <1.305t. Battery EV. 
-Van: Class I. <1.305t. Battery EV. 
-Van: Class I. <1.305t. Battery EV. 
-Van: Class II. 1.305-1.74t. Battery EV. 
-Van: Class II. 1.305-1.74t. Battery EV. 
-Van: Class II. 1.305-1.74t. Battery EV. 
-Van: Class III. 1.74-3.5t. Battery EV. 
-Van: Class III. 1.74-3.5t. Battery EV. 
-Van: Class III. 1.74-3.5t. Battery EV. 
-Van: Average size. <3.5t. Battery EV. 
-Van: Average size. <3.5t. Battery EV. 
-Van: Average size. <3.5t. Battery EV. 
-Passenger Flight: International (non-UK). Average 
-Passenger Flight: International (non-UK). Average 
-Passenger Flight: International (non-UK). Average 
-Passenger Flight: International (non-UK). Economy 
-Passenger Flight: International (non-UK). Economy 
-Passenger Flight: International (non-UK). Economy 
-Passenger Flight: International (non-UK). Premium Economy 
-Passenger Flight: International (non-UK). Premium Economy 
-Passenger Flight: International (non-UK). Premium Economy 
-Passenger Flight: International (non-UK). Business 
-Passenger Flight: International (non-UK). Business 
-Passenger Flight: International (non-UK). Business 
-Passenger Flight: International (non-UK). First 
-Passenger Flight: International (non-UK). First 
-Passenger Flight: International (non-UK). First 
-Car - Small - Battery EV 
-Car - Medium - Battery EV 
-Car - Large - Battery EV 
-Car - Average - Battery EV 
-Car - Small - Plug-in Hybrid EV 
-Car - Medium - Plug-in Hybrid EV 
-Car - Large - Plug-in Hybrid EV 
-Car - Average - Plug-in Hybrid EV 
-Waste - Construction - Aggregates 
-Waste - Construction - Aggregates 
-Waste - Construction - Aggregates 
-Waste - Construction - Asphalt 
-Waste - Construction - Asphalt 
-Waste - Construction - Asphalt 
-Waste - Construction - Average construction 
-Waste - Construction - Average construction 
-Waste - Construction - Bricks 
-Waste - Construction - Concrete 
-Waste - Construction - Concrete 
-Waste - Construction - Insulation 
-Waste - Construction - Metals 
-Waste - Construction - Mineral oil 
-Waste - Construction - Plasterboard 
-Waste - Construction - Soils 
-Waste - Construction - Tyres 
-Waste - Construction - Tyres 
-Waste - Construction - Wood 
-Waste - Construction - Wood 
-Waste - Construction - Wood 
-Waste - Construction - Wood 
-Waste - Construction - Wood 
-Waste - Electrical items - Batteries 
-Waste - Electrical items (WEEE) - fridges and freezers 
-Waste - Electrical items (WEEE) - large 
-Waste - Electrical items (WEEE) - large 
-Waste - Electrical items (WEEE) - mixed 
-Waste - Electrical items (WEEE) - mixed 
-Waste - Electrical items (WEEE) - small 
-Waste - Electrical items (WEEE) - small 
-Waste - Metal - Aluminium cans and foil (excl. forming) 
-Waste - Metal - Aluminium cans and foil (excl. forming) 
-Waste - Metal - Mixed cans 
-Waste - Metal - Mixed cans 
-Waste - Metal - Scrap metal 
-Waste - Metal - Scrap metal 
-Waste - Metal - Steel cans 
-Waste - Metal - Steel cans 
-Waste - Other - Books 
-Waste - Other - Books 
-Waste - Other - Books 
-Waste - Other - Clothing 
-Waste - Other - Clothing 
-Waste - Other - Clothing 
-Waste - Other - Glass 
-Waste - Other - Glass 
-Waste - Other - Glass 
-Waste - Paper and board - Board 
-Waste - Paper and board - Board 
-Waste - Paper and board - Board 
-Waste - Paper and board - Mixed 
-Waste - Paper and board - Mixed 
-Waste - Paper and board - Mixed 
-Waste - Paper and board - Paper 
-Waste - Paper and board - Paper 
-Waste - Paper and board - Paper 
-Waste - Plastic - Plastic film 
-Waste - Plastic - Plastic film 
-Waste - Plastic - Plastic film 
-Waste - Plastic - Rigid plastic 
-Waste - Plastic - Rigid plastic 
-Waste - Plastic - Rigid plastic 
-Waste - Plastic - Average plastics 
-Waste - Plastic - Average plastics 
-Waste - Plastic - Average plastics 
-Waste - Plastic - HDPE (incl. forming) 
-Waste - Plastic - HDPE (incl. forming) 
-Waste - Plastic - HDPE (incl. forming) 
-Waste - Plastic - LDPE and LLDPE (incl. forming) 
-Waste - Plastic - LDPE and LLDPE (incl. forming) 
-Waste - Plastic - LDPE and LLDPE (incl. forming) 
-Waste - Plastic - PET (incl. forming) 
-Waste - Plastic - PET (incl. forming) 
-Waste - Plastic - PET (incl. forming) 
-Waste - Plastic - PP (incl. forming) 
-Waste - Plastic - PP (incl. forming) 
-Waste - Plastic - PP (incl. forming) 
-Waste - Plastic - PS (incl. forming) 
-Waste - Plastic - PS (incl. forming) 
-Waste - Plastic - PS (incl. forming) 
-Waste - Plastic - PVC (incl. forming) 
-Waste - Plastic - PVC (incl. forming) 
-Waste - Plastic - PVC (incl. forming) 
-Waste - Refuse - Commercial and industrial waste 
-Waste - Refuse - Commercial and industrial waste 
-Waste - Refuse - Commercial and industrial waste 
-Waste - Refuse - Food and drink waste 
-Waste - Refuse - Food and drink waste 
-Waste - Refuse - Food and drink waste 
-Waste - Refuse - Garden waste 
-Waste - Refuse - Garden waste 
-Waste - Refuse - Garden waste 
-Waste - Refuse - Mixed food and garden waste 
-Waste - Refuse - Mixed food and garden waste 
-Waste - Refuse - Mixed food and garden waste 
-Waste - Refuse - Municipal waste 
-Waste - Refuse - Municipal waste 
-Waste - Refuse - Municipal waste 
-Waste - Refuse - Municipal waste 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Diesel (biofuel blend) 
-Aluminium - Sheet 
-Aluminium - Foil 
-Asphalt - 3% Bitumen Binder 
-Asphalt - 3.5% Bitumen Binder 
-Asphalt - 4.5% Bitumen Binder 
-Asphalt - 5.5% Bitumen Binder 
-Asphalt - 6.5% Bitumen Binder 
-Concrete - Precast Pipe - Unreinforced 
-Concrete - Precast Beams and Columns - Steel Reinforced 
-Concrete - Precast 150mm Hollowcore Floor - Prestressed Steel Reinforced 
-Glass - Roof or Skylight 
-Glass - General 
-Glass - Multi Layer Safety, 1mm - Fire Resistant Core
  De-duplicating
-2022-01-28 23:43:47 removed duplicated carbon factors 
+2022-02-15 15:56:41 removed duplicated carbon factors 
 
-2022-01-28 23:43:47 saving outputs 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-2022-01-28 23:43:47 Processing complete 
+
+
+
+ Summary of Missing Data
+
+ Missing carbon factors
+
+UPVC Membrane
+ Asssets which don't have any components
+
+hs_emergency_access_point 
+hs_maintenance_access_point 
+hs_system_railheads 
+hs_pce 
+hs_bridge 
+hs_cut_cover_tunnel 
+hs_building_grade 
+car_park 
+hs_carriageway 
+hs_circulation_feature 
+hs 
+hs_building_underground 
+hs_building_elevated 
+hs_pnc 
+rail_ub_road 
+rail_underpass 
+rail_car_park 
+rail_carriageway 
+rail_circulation_feature 
+rail_track 
+rail_ole 
+rail_pnc 
+cycle_lane_segregated 
+cycle_lane_rural
+ Assets that have components but are not listed in the asset table
+
+hs_line_viaduct_bu 
+hs_rail_underpass 
+hs_culvert_bu 
+hs_shaft_bu 
+hs_retained_cutting_bu 
+hs_underbridge_bu 
+hs_tunnel_portal_bu 
+hs_overbridge_bu 
+hs_mined_tunnel_bu 
+hs_boxstructure_bu 
+hs_bored_tunnel_bu 
+hs_cutting_bu 
+hs_embankment_bu 
+cycle_lane_segregrated 
+cycle_track_rural
+ Interventions that have assets but are not listed in the intervention table
+
+hs_track 
+hs_ole 
+hs_pnc 
+rail_overbridge_flyover_road 
+rail_overbridge_a_road 
+rail_overbridge_b_road 
+rail_overbridge_bridleway 
+rail_overbridge_footpath 
+rail_green_bridge 
+rail_underpass_footpath 
+rail_underpass 
+rail_maintenance_depot 
+rail_freight_terminal 
+cycle_upgrade_stepped 
+cycle_upgrade_segregated 
+cycle_upgrade_rail_cycle_path 
+cycle_stands_roof
+ Interventions that have no assets
+
+cycle_parking_roof
+2022-02-15 15:56:41 saving outputs 
+
+2022-02-15 15:56:41 Processing complete 
