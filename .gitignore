@@ -38,3 +38,10 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 *.zip
+data/UK-dem-50m-4326-Int16.tif
+data/superficial.tif
+data/land_use_4326.tif
+data/land_use_3035.tif
+data/floodzones.geojson/floodzones.geojson
+data/flooding/floodzones.geojson
+data/bedrock.tif
