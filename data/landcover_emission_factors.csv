@@ -1,0 +1,38 @@
+landcover_id,landcover_name,cold_temp_wet,warm_temp_wet
+1,Continuous urban fabric,0,0
+2,Discontinuous urban fabric,0,0
+3,Industrial or commercial units,0,0
+4,Road and rail networks and associated land,0,0
+5,Port areas,0,0
+6,Airports,0,0
+7,Mineral extraction sites,0,0
+8,Dump sites,0,0
+9,Construction sites,0,0
+10,Green urban areas,0,0
+11,Sport and leisure facilities,0,0
+12,Non-irrigated arable land,35.62777778,25.88666667
+16,Fruit trees and berry plantations,23.1,23.1
+18,Pastures,1.76,1.98
+20,Complex cultivation patterns,35.62777778,25.88666667
+21,"Land principally occupied by agriculture, with significant areas of natural vegetation",35.62777778,25.88666667
+22,Agro-forestry areas,27.5,27.5
+23,Broad-leaved forest,22.36666667,22.36666667
+24,Coniferous forest,24.56666667,24.56666667
+25,Mixed forest,23.46666667,23.46666667
+26,Natural grasslands,1.76,1.98
+27,Moors and heathland,1.76,1.98
+29,Transitional woodland-shrub,22.36666667,22.36666667
+30,"Beaches, dunes, sands",0,0
+31,Bare rocks,0,0
+32,Sparsely vegetated areas,0,0
+33,Burnt areas,0,0
+35,Inland marshes,31.9,32.26666667
+36,Peat bogs,31.9,32.26666667
+37,Salt marshes,31.9,32.26666667
+39,Intertidal flats,31.9,32.26666667
+40,Water courses,0,0
+41,Water bodies,0,0
+42,Coastal lagoons,0,0
+43,Estuaries,31.9,32.26666667
+44,Sea and ocean,0,0
+128,No Data,0,0
