@@ -1,13 +1,16 @@
 "mode","intervention_class","intervention","no_asset","no_components","no_carbon_factor"
 "High speed rail","New construction","hs_line_viaduct",3,16,43
+"Bicycle","New construction","cycle_lane_segregated",1,10,15
 "Bicycle","New construction","cycle_track_urban",1,10,14
 "Bicycle","New construction","cycle_lane_stepped",1,10,13
 "Bicycle","New construction","cycle_lane_painted",1,9,12
+"Bicycle","Upgrade","cycle_upgrade_rail_cycle_path",1,6,10
+"Bicycle","Upgrade","cycle_upgrade_stepped",1,7,9
+"Bicycle","Upgrade","cycle_upgrade_segregated",1,7,8
 "Bicycle","New construction","cycle_docking_station",1,3,4
 "Bicycle","New construction","cycle_secure_parking",1,2,3
+"Bicycle","New construction","cycle_stands_roof",1,3,3
 "Bicycle","New construction","cycle_stands_open",1,2,2
-"Bicycle","New construction","cycle_lane_segregated",1,0,0
-"Bicycle","New construction","cycle_parking_roof",0,0,0
 "Bicycle","New construction","cycle_track_rural",1,0,0
 "High speed rail","New construction","hs_line_bridge",3,1,0
 "High speed rail","New construction","hs_line_cutting",8,1,0
@@ -19,7 +22,13 @@
 "High speed rail","New construction","hs_station_elevated",1,0,0
 "High speed rail","New construction","hs_station_grade",5,1,0
 "High speed rail","New construction","hs_station_underground",2,0,0
+"High speed rail","Renewal","hs_ole",1,1,0
+"Rail","New construction","rail_green_bridge",1,1,0
+"Rail","New construction","rail_overbridge_a_road",1,1,0
+"Rail","New construction","rail_overbridge_b_road",1,1,0
+"Rail","New construction","rail_overbridge_bridleway",1,1,0
+"Rail","New construction","rail_overbridge_flyover_road",1,1,0
+"Rail","New construction","rail_overbridge_footpath",1,1,0
 "Rail","New construction","rail_overbridge_rail",1,1,0
-"Rail","New construction","rail_overbridge_road",1,1,0
 "Rail","New construction","rail_underbridge_rail",1,1,0
 "Rail","New construction","rail_underbridge_road",1,0,0

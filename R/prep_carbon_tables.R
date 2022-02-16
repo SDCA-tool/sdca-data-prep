@@ -1,5 +1,6 @@
 #dir = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
-dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
+#dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
+dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
 
 library(readr)
 library(readxl)
