@@ -42,6 +42,14 @@ names(bedrock_carbon) = c("rock_type","cut","fill","processing")
 processing <- readxl::read_excel(file.path(path,"Earthworks_Clean.xlsx"),
                                  sheet = "Processing")
 
+bedrock_density <- readxl::read_excel(file.path(path,"Earthworks_Clean.xlsx"),
+                                      sheet = "Bedrock_density")
+names(bedrock_density) = c("rock_type","density_loose","density_bank")
+
+superficial_density <- readxl::read_excel(file.path(path,"Earthworks_Clean.xlsx"),
+                                      sheet = "Superficial_Density")
+names(superficial_density) = c("rock_type","density_loose","density_bank")
+
 # Raster Looup tables
 
 bedrock_lookup <- read.csv("bedrock_lookup.csv")
@@ -52,24 +60,26 @@ superficial_lookup <- read.csv("superficial_lookup.csv")
 bedrock <- left_join(bedrock_class, bedrock_lookup, by = c("rock_type" = "type"))
 bedrock <- left_join(bedrock, bedrock_cut, by = c("rock_type" = "Inuput Bedrock"))
 bedrock <- left_join(bedrock, bedrock_carbon, by = c("rock_type" = "rock_type"))
+bedrock <- left_join(bedrock, bedrock_density, by = c("rock_type" = "rock_type"))
 
 superficial <- left_join(superficial_class, superficial_lookup, by = c("rock_type" = "type"))
 superficial <- left_join(superficial, superficial_cut, by = c("rock_type" = "Input Superficial Deposit"))
 superficial <- left_join(superficial, superficial_carbon, by = c("rock_type" = "rock_type"))
+superficial <- left_join(superficial, superficial_density, by = c("rock_type" = "rock_type"))
 
-rm(bedrock_carbon, bedrock_class, bedrock_cut, bedrock_lookup)
-rm(superficial_carbon, superficial_class, superficial_cut, superficial_lookup)
+rm(bedrock_carbon, bedrock_class, bedrock_cut, bedrock_lookup, bedrock_density)
+rm(superficial_carbon, superficial_class, superficial_cut, superficial_lookup, superficial_density)
 
 bedrock <- bedrock[,c("id","rock_type","type_0","type_1",
                       "type_2","type_3","type_6","type_7",
-                      "type_8","type_9","cut_intensity",
+                      "type_8","type_9",
                       "Slope angle (deg)","cut",
-                      "fill","processing")]
+                      "fill","processing","density_loose","density_bank")]
 names(bedrock) = c("id","rock_type","type_0","type_1",
                    "type_2","type_3","type_6","type_7",
-                   "type_8","type_9","cut_intensity",
+                   "type_8","type_9",
                    "angle","cut",
-                   "fill","processing")
+                   "fill","processing","density_loose","density_bank")
 bedrock[3:10] <- lapply(bedrock[3:10], function(x){
   x <- as.numeric(x)
   x[is.na(x)] <- 0
@@ -78,14 +88,14 @@ bedrock[3:10] <- lapply(bedrock[3:10], function(x){
 
 superficial <- superficial[,c("id","rock_type","thickness","type_0","type_1",
                       "type_2","type_3","type_6","type_7",
-                      "type_8","type_9","cut_intensity",
+                      "type_8","type_9",
                       "Slope angle (deg)","cut",
-                      "fill","processing")]
+                      "fill","processing","density_loose","density_bank")]
 names(superficial) = c("id","rock_type","thickness","type_0","type_1",
                    "type_2","type_3","type_6","type_7",
-                   "type_8","type_9","cut_intensity",
+                   "type_8","type_9",
                    "angle","cut",
-                   "fill","processing")
+                   "fill","processing","density_loose","density_bank")
 superficial[4:11] <- lapply(superficial[3:10], function(x){
   x <- as.numeric(x)
   x[is.na(x)] <- 0
