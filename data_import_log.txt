@@ -1,27 +1,24 @@
-2022-02-18 15:41:24 Starting data import
-2022-02-18 15:41:24 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions.xlsx
+2022-02-18 19:23:29 Starting data import
+2022-02-18 19:23:29 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/interventions.xlsx
 
-2022-02-18 15:41:24 rows =  145 cols = 12
+2022-02-18 19:23:29 rows =  146 cols = 12
 
-2022-02-18 15:41:24 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions_to_assets.xlsx
+2022-02-18 19:23:29 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/interventions_to_assets.xlsx
 
- Sheet found: HS_line_grade 
- Sheet found: HS_line_cutting 
- Sheet found: HS_line_embankment 
- Sheet found: HS_line_bridge 
- Sheet found: HS_line_viaduct 
- Sheet found: HS_line_tunnel_bored 
- Sheet found: HS_line_tunnel_cut_cover 
- Sheet found: HS_line_tunnel_mined 
- Sheet found: HS_station_grade 
- Sheet found: HS_station_underground 
- Sheet found: HS_station_elevated 
- Sheet found: HS_track 
- Sheet found: HS_OLE 
- Sheet found: HS_PnC 
+ Sheet found: hs_line_grade 
+ Sheet found: hs_line_cutting 
+ Sheet found: hs_line_embankment 
+ Sheet found: hs_line_bridge 
+ Sheet found: hs_line_viaduct 
+ Sheet found: hs_line_tunnel_bored 
+ Sheet found: hs_line_tunnel_cut_cover 
+ Sheet found: hs_line_tunnel_mined 
+ Sheet found: hs_station_grade 
+ Sheet found: hs_station_underground 
+ Sheet found: hs_station_elevated 
  Sheet found: rail_overbridge_flyover_road 
- Sheet found: rail_overbridge_A_road 
- Sheet found: rail_overbridge_B_road 
+ Sheet found: rail_overbridge_a_road 
+ Sheet found: rail_overbridge_b_road 
  Sheet found: rail_overbridge_bridleway 
  Sheet found: rail_overbridge_footpath 
  Sheet found: rail_overbridge_road 
@@ -33,66 +30,26 @@
  Sheet found: rail_underpass 
  Sheet found: rail_maintenance_depot 
  Sheet found: rail_freight_terminal 
- Sheet found: Cycle_lane_painted 
- Sheet found: Cycle_lane_stepped 
- Sheet found: Cycle_lane_segregated 
- Sheet found: Cycle_track_rural 
- Sheet found: Cycle_track_urban 
- Sheet found: Cycle_upgrade_stepped 
- Sheet found: Cycle_upgrade_segregated 
- Sheet found: Cycle_upgrade_rail_cycle_path 
- Sheet found: Cycle_stands_open 
- Sheet found: Cycle_stands_roof 
- Sheet found: Cycle_docking_station 
- Sheet found: Cycle_secure_parking
-2022-02-18 15:41:24 The following  tabs in interventions_to_assets are not in interventions: 
-HS_track, HS_PnC, rail_overbridge_A_road, rail_overbridge_B_road, rail_overbridge_road, rail_underpass_footpath, rail_underpass, rail_maintenance_depot, rail_freight_terminal
-2022-02-18 15:41:24 The following  interventions in interventions are not tabs in interventions_to_assets : 
-rail_overbridge_a_road, rail_overbridge_b_road
-2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_bored
+ Sheet found: cycle_lane_painted 
+ Sheet found: cycle_lane_stepped 
+ Sheet found: cycle_lane_segregated 
+ Sheet found: cycle_track_rural 
+ Sheet found: cycle_track_urban 
+ Sheet found: cycle_upgrade_stepped 
+ Sheet found: cycle_upgrade_segregated 
+ Sheet found: cycle_upgrade_rail_cycle_path 
+ Sheet found: cycle_stands_open 
+ Sheet found: cycle_stands_roof 
+ Sheet found: cycle_docking_station 
+ Sheet found: cycle_secure_parking
+2022-02-18 19:23:30 The following  tabs in interventions_to_assets are not in interventions: 
+rail_underpass_footpath, rail_underpass, rail_maintenance_depot, rail_freight_terminal
+2022-02-18 19:23:30 The following  interventions in interventions are not tabs in interventions_to_assets : 
+hs_OLE
+2022-02-18 19:23:32 Wrong column names in hs_station_elevated
  missing: include
-2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_cut_cover
- missing: include
-2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_mined
- missing: include
-2022-02-18 15:41:24 Wrong column names in HS_station_elevated
- missing: include
-2022-02-18 15:41:25 Wrong column names in rail_green_bridge
- missing: 
-2022-02-18 15:41:25 Wrong column names in rail_underpass_footpath
- missing: 
-2022-02-18 15:41:25 Wrong column names in rail_underpass
- missing: 
-2022-02-18 15:41:25 Wrong column names in rail_maintenance_depot
- missing: include
-2022-02-18 15:41:25 Wrong column names in rail_freight_terminal
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_lane_painted
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_lane_stepped
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_lane_segregated
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_track_rural
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_track_urban
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_stepped
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_segregated
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_rail_cycle_path
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_stands_open
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_stands_roof
- missing: include
-2022-02-18 15:41:25 Wrong column names in Cycle_docking_station
- missing: include
-2022-02-18 15:41:26 Wrong column names in Cycle_secure_parking
- missing: include
-2022-02-18 15:41:26 Imported all sheets
-2022-02-18 15:41:26 Merged all sheets into single table
+2022-02-18 19:23:36 Imported all sheets
+2022-02-18 19:23:36 Merged all sheets into single table
  Column names are 
 intervention 
 asset 
@@ -119,72 +76,72 @@ volume_unit
 volume_default 
 width_unit 
 width_default
-2022-02-18 15:41:26 Creating parameters table
-2022-02-18 15:41:26 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/assets.xlsx
+2022-02-18 19:23:37 Creating parameters table
+2022-02-18 19:23:37 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/assets.xlsx
 
- Sheet found: HS_tunnel_portal 
- Sheet found: HS_cut_cover_tunnel 
- Sheet found: HS_bored_tunnel 
- Sheet found: HS_mined_tunnel 
- Sheet found: HS_line_cutting 
- Sheet found: HS_embankment 
- Sheet found: HS_bridge 
- Sheet found: HS_viaduct 
+ Sheet found: hs_tunnel_portal 
+ Sheet found: hs_cut_cover_tunnel 
+ Sheet found: hs_bored_tunnel 
+ Sheet found: hs_mined_tunnel 
+ Sheet found: hs_line_cutting 
+ Sheet found: hs_embankment 
+ Sheet found: hs_bridge 
+ Sheet found: hs_viaduct 
  Sheet found: HS_line_viaduct_BU 
- Sheet found: HS_Rail_Underpass 
- Sheet found: HS_culvert 
- Sheet found: HS_culvert_BU 
- Sheet found: HS_shaft_BU 
- Sheet found: HS_System_railheads 
- Sheet found: HS_maintenance_access_Point 
- Sheet found: HS_track 
- Sheet found: HS_emergency_access_point 
- Sheet found: HS_building_elevated 
- Sheet found: HS_mitigation_earthworks 
- Sheet found: HS_retained_cutting_BU 
- Sheet found: HS_underbridge_BU 
- Sheet found: HS_tunnel_portal_BU 
- Sheet found: HS_overbridge_BU 
- Sheet found: HS_mined_tunnel_BU 
- Sheet found: HS_boxstructure_BU 
+ Sheet found: hs_Rail_Underpass 
+ Sheet found: hs_culvert 
+ Sheet found: hs_culvert_BU 
+ Sheet found: hs_shaft_BU 
+ Sheet found: hs_system_railheads 
+ Sheet found: hs_maintenance_access_Point 
+ Sheet found: hs_track_double 
+ Sheet found: hs_emergency_access_point 
+ Sheet found: hs_building_elevated 
+ Sheet found: hs_mitigation_earthworks 
+ Sheet found: hs_retained_cutting_BU 
+ Sheet found: hs_underbridge_BU 
+ Sheet found: hs_tunnel_portal_BU 
+ Sheet found: hs_overbridge_BU 
+ Sheet found: hs_mined_tunnel_BU 
+ Sheet found: hs_boxstructure_BU 
  Sheet found: HS_bored_tunnel_BU 
- Sheet found: HS_cutting_BU 
- Sheet found: HS_embankment_BU 
- Sheet found: HS_OLE 
- Sheet found: HS_PnC 
- Sheet found: RAIL_car_park 
- Sheet found: RAIL_Carriageway 
- Sheet found: RAIL_circulation_feature 
- Sheet found: RAIL_track 
- Sheet found: RAIL_OLE 
- Sheet found: RAIL_PNC 
- Sheet found: RAIL_building 
- Sheet found: RAIL_underpass 
- Sheet found: RAIL_underpass_footpath 
- Sheet found: RAIL_UB 
+ Sheet found: hs_cutting_BU 
+ Sheet found: hs_embankment_BU 
+ Sheet found: hs_OLE 
+ Sheet found: hs_PnC 
+ Sheet found: rail_car_park 
+ Sheet found: rail_Carriageway 
+ Sheet found: rail_circulation_feature 
+ Sheet found: rail_track 
+ Sheet found: rail_OLE 
+ Sheet found: rail_PNC 
+ Sheet found: rail_building 
+ Sheet found: rail_underpass 
+ Sheet found: rail_underpass_footpath 
+ Sheet found: rail_UB 
  Sheet found: RAIL_OB_rail 
- Sheet found: RAIL_Green_bridge 
- Sheet found: RAIL_OB_typical 
- Sheet found: RAIL_OB_flyover_road 
- Sheet found: RAIL_OB_B_road 
- Sheet found: RAIL_OB_A_road 
- Sheet found: RAIL_OB_bridleway 
- Sheet found: RAIL_OB_footpath 
- Sheet found: Overbridge 
- Sheet found: Cycle_lane_painted 
- Sheet found: Cycle_lane_stepped 
- Sheet found: Cycle_lane_segregated 
- Sheet found: Cycle_track_rural 
- Sheet found: Cycle_track_urban 
- Sheet found: Cycle_upgrade_stepped 
- Sheet found: Cycle_upgrade_segregated 
- Sheet found: Cycle_upgrade_rail_cycle_path 
- Sheet found: Cycle_stands_roof 
- Sheet found: Cycle_stands_open 
- Sheet found: Cycle_secure_parking 
- Sheet found: Cycle_docking_station
-2022-02-18 15:41:28 Imported all sheets
-2022-02-18 15:41:28 Merged all sheets into single table
+ Sheet found: rail_Green_bridge 
+ Sheet found: rail_OB_typical 
+ Sheet found: rail_OB_flyover_road 
+ Sheet found: rail_OB_B_road 
+ Sheet found: rail_OB_A_road 
+ Sheet found: rail_OB_bridleway 
+ Sheet found: rail_OB_footpath 
+ Sheet found: overbridge 
+ Sheet found: cycle_lane_painted 
+ Sheet found: cycle_lane_stepped 
+ Sheet found: cycle_lane_segregated 
+ Sheet found: cycle_track_rural 
+ Sheet found: cycle_track_urban 
+ Sheet found: cycle_upgrade_stepped 
+ Sheet found: cycle_upgrade_segregated 
+ Sheet found: cycle_upgrade_rail_cycle_path 
+ Sheet found: cycle_stands_roof 
+ Sheet found: cycle_stands_open 
+ Sheet found: cycle_secure_parking 
+ Sheet found: cycle_docking_station
+2022-02-18 19:23:46 Imported all sheets
+2022-02-18 19:23:46 Merged all sheets into single table
  Column names are 
 asset 
 works_category_level_1 
@@ -199,11 +156,11 @@ no_granular_data_A1_A3
 no_granular_data_A4 
 no_granular_data_B2 
 no_granular_data_B4
-2022-02-18 15:41:28 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/carbon_factors_library.csv
+2022-02-18 19:23:47 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/carbon_factors_library.csv
 
  Duplicated carbon factor names found
  De-duplicating
-2022-02-18 15:41:28 removed duplicated carbon factors 
+2022-02-18 19:23:48 removed duplicated carbon factors 
 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
@@ -214,39 +171,22 @@ no_granular_data_B4
 
  Missing carbon factors
 
-
+UPVC Membrane
  Asssets which don't have any components
 
-hs_emergency_access_point 
-hs_maintenance_access_point 
-hs_system_railheads 
-hs_track_double 
-hs_pce 
-hs_bridge 
-hs_cut_cover_tunnel 
-hs_building_grade 
-car_park 
-hs_carriageway 
-hs_circulation_feature 
-hs_building_underground 
 hs_building_elevated 
-hs_pnc 
 rail_ub_road 
 rail_underpass 
-rail_car_park 
-rail_carriageway 
-rail_circulation_feature 
 rail_track 
 rail_ole 
-rail_pnc 
 cycle_lane_rural
  Assets that have components but are not listed in the asset table
 
+hs_line_cutting 
 hs_line_viaduct_bu 
 hs_rail_underpass 
 hs_culvert_bu 
 hs_shaft_bu 
-hs_track 
 hs_retained_cutting_bu 
 hs_underbridge_bu 
 hs_tunnel_portal_bu 
@@ -254,21 +194,19 @@ hs_overbridge_bu
 hs_mined_tunnel_bu 
 hs_boxstructure_bu 
 hs_bored_tunnel_bu 
-hs_cutting_bu 
 hs_embankment_bu 
+rail_building 
 cycle_track_rural
  Interventions that have assets but are not listed in the intervention table
 
-hs_track 
-hs_pnc 
-rail_overbridge_road 
 rail_underpass_footpath 
 rail_underpass 
 rail_maintenance_depot 
 rail_freight_terminal
  Interventions that have no assets
 
+hs_station_underground 
+hs_ole
+2022-02-18 19:23:48 saving outputs 
 
-2022-02-18 15:41:28 saving outputs 
-
-2022-02-18 15:41:28 Processing complete 
+2022-02-18 19:23:48 Processing complete 
