@@ -206,6 +206,10 @@ for(i in 1:nrow(components)){
 }
 
 # Standardise assets and components to SI units
+components$no_granular_data_A1_A3 = as.numeric(components$no_granular_data_A1_A3)
+components$no_granular_data_A4 = as.numeric(components$no_granular_data_A4)
+components$no_granular_data_B2 = as.numeric(components$no_granular_data_B2)
+components$no_granular_data_B4 = as.numeric(components$no_granular_data_B4)
 
 assets_sub = assets[,c("asset","asset_unit")]
 assets_sub = unique(assets_sub)
@@ -217,10 +221,18 @@ for(i in 1:nrow(components)){
     if (sub_unit == "km") {
       components$quantity[i] = components$quantity[i] / 1000
       components$A5[i] = components$A5[i] / 1000
+      components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1000
+      components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1000
+      components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1000
+      components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1000
       components$input_unit[i] = "asset_unit"
     } else if(sub_unit == "km2"){
       components$quantity[i] = components$quantity[i] / 1e6
       components$A5[i] = components$A5[i] / 1e6
+      components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1e6
+      components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1e6
+      components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1e6
+      components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1e6
       components$input_unit[i] = "asset_unit"
     } else {
       if(!sub_unit %in% c("m","number")){
@@ -432,12 +444,17 @@ cat(paste0("\n",missing_assets2), file = log_con, append = TRUE)
 
 
 # Remove Scientific notation
-components$quantity <- format(components$quantity, scientific = FALSE, digits = 5)
-components$A5 <- format(components$A5, scientific = FALSE, digits = 5)
-carbon_factors$carbon_factor <- format(carbon_factors$carbon_factor, scientific = FALSE, digits = 5)
+components$quantity <- format(components$quantity, scientific = FALSE, digits = 5, trim = TRUE)
+components$A5 <- format(components$A5, scientific = FALSE, digits = 5, trim = TRUE)
+carbon_factors$carbon_factor <- format(carbon_factors$carbon_factor, scientific = FALSE, digits = 5, trim = TRUE)
+
 components$quantity[grepl("NA",components$quantity)] <- NA
 components$A5[grepl("NA",components$A5)] <- NA
 carbon_factors$carbon_factor[grepl("NA",carbon_factors$carbon_factor)] <- NA
+
+# components$quantity <- trimws(components$quantity)
+# components$A5 <- trimws(components$A5)
+# carbon_factors$carbon_factor <- trimws(carbon_factors$carbon_factor)
 
 # Write out tables
 cat(paste0("\n",Sys.time()," saving outputs "), file = log_con, append = TRUE, sep = "\n")
