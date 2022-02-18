@@ -1,9 +1,9 @@
-2022-02-16 10:48:46 Starting data import
-2022-02-16 10:48:46 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/interventions.xlsx
+2022-02-18 15:41:24 Starting data import
+2022-02-18 15:41:24 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions.xlsx
 
-2022-02-16 10:48:48 rows =  145 cols = 12
+2022-02-18 15:41:24 rows =  145 cols = 12
 
-2022-02-16 10:48:48 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/interventions_to_assets.xlsx
+2022-02-18 15:41:24 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions_to_assets.xlsx
 
  Sheet found: HS_line_grade 
  Sheet found: HS_line_cutting 
@@ -45,54 +45,54 @@
  Sheet found: Cycle_stands_roof 
  Sheet found: Cycle_docking_station 
  Sheet found: Cycle_secure_parking
-2022-02-16 10:48:50 The following  tabs in interventions_to_assets are not in interventions: 
+2022-02-18 15:41:24 The following  tabs in interventions_to_assets are not in interventions: 
 HS_track, HS_PnC, rail_overbridge_A_road, rail_overbridge_B_road, rail_overbridge_road, rail_underpass_footpath, rail_underpass, rail_maintenance_depot, rail_freight_terminal
-2022-02-16 10:48:50 The following  interventions in interventions are not tabs in interventions_to_assets : 
+2022-02-18 15:41:24 The following  interventions in interventions are not tabs in interventions_to_assets : 
 rail_overbridge_a_road, rail_overbridge_b_road
-2022-02-16 10:48:54 Wrong column names in HS_line_tunnel_bored
+2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_bored
  missing: include
-2022-02-16 10:48:54 Wrong column names in HS_line_tunnel_cut_cover
+2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_cut_cover
  missing: include
-2022-02-16 10:48:54 Wrong column names in HS_line_tunnel_mined
+2022-02-18 15:41:24 Wrong column names in HS_line_tunnel_mined
  missing: include
-2022-02-16 10:48:55 Wrong column names in HS_station_elevated
+2022-02-18 15:41:24 Wrong column names in HS_station_elevated
  missing: include
-2022-02-16 10:48:58 Wrong column names in rail_green_bridge
+2022-02-18 15:41:25 Wrong column names in rail_green_bridge
  missing: 
-2022-02-16 10:48:58 Wrong column names in rail_underpass_footpath
+2022-02-18 15:41:25 Wrong column names in rail_underpass_footpath
  missing: 
-2022-02-16 10:48:59 Wrong column names in rail_underpass
+2022-02-18 15:41:25 Wrong column names in rail_underpass
  missing: 
-2022-02-16 10:48:59 Wrong column names in rail_maintenance_depot
+2022-02-18 15:41:25 Wrong column names in rail_maintenance_depot
  missing: include
-2022-02-16 10:48:59 Wrong column names in rail_freight_terminal
+2022-02-18 15:41:25 Wrong column names in rail_freight_terminal
  missing: include
-2022-02-16 10:49:00 Wrong column names in Cycle_lane_painted
+2022-02-18 15:41:25 Wrong column names in Cycle_lane_painted
  missing: include
-2022-02-16 10:49:00 Wrong column names in Cycle_lane_stepped
+2022-02-18 15:41:25 Wrong column names in Cycle_lane_stepped
  missing: include
-2022-02-16 10:49:01 Wrong column names in Cycle_lane_segregated
+2022-02-18 15:41:25 Wrong column names in Cycle_lane_segregated
  missing: include
-2022-02-16 10:49:01 Wrong column names in Cycle_track_rural
+2022-02-18 15:41:25 Wrong column names in Cycle_track_rural
  missing: include
-2022-02-16 10:49:02 Wrong column names in Cycle_track_urban
+2022-02-18 15:41:25 Wrong column names in Cycle_track_urban
  missing: include
-2022-02-16 10:49:02 Wrong column names in Cycle_upgrade_stepped
+2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_stepped
  missing: include
-2022-02-16 10:49:02 Wrong column names in Cycle_upgrade_segregated
+2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_segregated
  missing: include
-2022-02-16 10:49:03 Wrong column names in Cycle_upgrade_rail_cycle_path
+2022-02-18 15:41:25 Wrong column names in Cycle_upgrade_rail_cycle_path
  missing: include
-2022-02-16 10:49:03 Wrong column names in Cycle_stands_open
+2022-02-18 15:41:25 Wrong column names in Cycle_stands_open
  missing: include
-2022-02-16 10:49:03 Wrong column names in Cycle_stands_roof
+2022-02-18 15:41:25 Wrong column names in Cycle_stands_roof
  missing: include
-2022-02-16 10:49:03 Wrong column names in Cycle_docking_station
+2022-02-18 15:41:25 Wrong column names in Cycle_docking_station
  missing: include
-2022-02-16 10:49:04 Wrong column names in Cycle_secure_parking
+2022-02-18 15:41:26 Wrong column names in Cycle_secure_parking
  missing: include
-2022-02-16 10:49:04 Imported all sheets
-2022-02-16 10:49:04 Merged all sheets into single table
+2022-02-18 15:41:26 Imported all sheets
+2022-02-18 15:41:26 Merged all sheets into single table
  Column names are 
 intervention 
 asset 
@@ -119,8 +119,8 @@ volume_unit
 volume_default 
 width_unit 
 width_default
-2022-02-16 10:49:04 Creating parameters table
-2022-02-16 10:49:04 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/assets.xlsx
+2022-02-18 15:41:26 Creating parameters table
+2022-02-18 15:41:26 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/assets.xlsx
 
  Sheet found: HS_tunnel_portal 
  Sheet found: HS_cut_cover_tunnel 
@@ -183,8 +183,8 @@ width_default
  Sheet found: Cycle_stands_open 
  Sheet found: Cycle_secure_parking 
  Sheet found: Cycle_docking_station
-2022-02-16 10:49:19 Imported all sheets
-2022-02-16 10:49:19 Merged all sheets into single table
+2022-02-18 15:41:28 Imported all sheets
+2022-02-18 15:41:28 Merged all sheets into single table
  Column names are 
 asset 
 works_category_level_1 
@@ -195,15 +195,15 @@ input_unit
 A5 
 asset_lifetime 
 replacements_during_lifetime 
-no_granular_data_A1-A3 
+no_granular_data_A1_A3 
 no_granular_data_A4 
 no_granular_data_B2 
 no_granular_data_B4
-2022-02-16 10:49:20 reading C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General/Data Tables/clean/carbon_factors_library.csv
+2022-02-18 15:41:28 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/carbon_factors_library.csv
 
  Duplicated carbon factor names found
  De-duplicating
-2022-02-16 10:49:23 removed duplicated carbon factors 
+2022-02-18 15:41:28 removed duplicated carbon factors 
 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
@@ -214,7 +214,7 @@ no_granular_data_B4
 
  Missing carbon factors
 
-UPVC Membrane
+
  Asssets which don't have any components
 
 hs_emergency_access_point 
@@ -269,6 +269,6 @@ rail_freight_terminal
  Interventions that have no assets
 
 
-2022-02-16 10:49:23 saving outputs 
+2022-02-18 15:41:28 saving outputs 
 
-2022-02-16 10:49:24 Processing complete 
+2022-02-18 15:41:28 Processing complete 

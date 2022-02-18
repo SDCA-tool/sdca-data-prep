@@ -45,3 +45,7 @@ data/land_use_3035.tif
 data/floodzones.geojson/floodzones.geojson
 data/flooding/floodzones.geojson
 data/bedrock.tif
+rasters/bedrock.tif
+rasters/dem.tif
+rasters/landcover.tif
+rasters/superficial.tif

@@ -1,6 +1,6 @@
 #dir = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
-#dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
-dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
+#dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
 
 library(readr)
 library(readxl)
@@ -179,6 +179,7 @@ components = bind_rows(components)
 components = components[,c("asset",names(components)[names(components) != "asset"])]
 components$assets_sample_size <- NULL
 
+names(components) <- gsub("-","_",names(components))
 
 cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_con, append = TRUE)
 cat(paste0("\n Column names are "), file = log_con, append = TRUE)
