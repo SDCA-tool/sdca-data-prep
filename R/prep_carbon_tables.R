@@ -1,6 +1,6 @@
 #dir = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
-dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
-#dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+#dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
+dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
 
 library(readr)
 library(readxl)
@@ -92,6 +92,7 @@ cat(paste0("\n",Sys.time()," Imported all sheets"), file = log_con, append = TRU
 
 assets = bind_rows(assets)
 assets$Notes = NULL
+assets <- assets[assets$include,]
 
 names(assets)[1:2] <- c("asset","asset_name")
 assets <- assets[,c("intervention",names(assets)[names(assets) != "intervention"])]
@@ -161,7 +162,7 @@ sheets = excel_sheets(path)
 cat(paste0("\n Sheet found: ",sheets), file = log_con, append = TRUE)
 
 # TODO: Manual filtering
-sheets = sheets[!sheets %in% c("Template","HS_cut_cover_tunnel")]
+sheets = sheets[!sheets %in% c("Template")]
 
 components <- list()
 for(i in 1:length(sheets)){
