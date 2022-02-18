@@ -1,0 +1,31 @@
+{
+	"_timestamp": 1645198054277,
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"_interventionTypeIndex": 9,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Rail",
+				"mode": "High speed rail",
+				"intervention_class": "New construction",
+				"intervention_name": "New high speed line at grade",
+				"intervention": "hs_line_grade"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.128823,
+						51.503283
+					],
+					[
+						-0.115687,
+						51.502282
+					]
+				]
+			}
+		}
+	]
+}

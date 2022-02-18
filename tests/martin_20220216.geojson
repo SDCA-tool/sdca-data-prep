@@ -1,0 +1,56 @@
+{
+	"_timestamp": 1645037461419,
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"_interventionTypeIndex": 0,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Rail",
+				"mode": "Rail",
+				"intervention_class": "New construction",
+				"intervention_name": "Overbridge - flyover road",
+				"intervention": "rail_overbridge_flyover_road"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.122202,
+						51.509395
+					],
+					[
+						-0.115184,
+						51.496406
+					]
+				]
+			}
+		},
+		{
+			"_interventionTypeIndex": 0,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Rail",
+				"mode": "Rail",
+				"intervention_class": "New construction",
+				"intervention_name": "Overbridge - flyover road",
+				"intervention": "rail_overbridge_flyover_road"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.121891,
+						51.512448
+					],
+					[
+						-0.106614,
+						51.503713
+					]
+				]
+			}
+		}
+	]
+}

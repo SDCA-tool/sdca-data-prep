@@ -1,0 +1,85 @@
+{
+	"_timestamp": 1645185331981,
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"_interventionTypeIndex": 21,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Active travel",
+				"mode": "Bicycle",
+				"intervention_class": "New construction",
+				"intervention_name": "New painted cycle lane",
+				"intervention": "cycle_lane_painted"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.499008,
+						52.907764
+					],
+					[
+						-0.271734,
+						52.684976
+					]
+				]
+			}
+		},
+		{
+			"_interventionTypeIndex": 9,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Rail",
+				"mode": "High speed rail",
+				"intervention_class": "New construction",
+				"intervention_name": "New high speed line at grade",
+				"intervention": "hs_line_grade"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.324878,
+						52.886897
+					],
+					[
+						-0.25942,
+						52.82087
+					]
+				]
+			}
+		},
+		{
+			"_interventionTypeIndex": 9,
+			"type": "Feature",
+			"properties": {
+				"infrastructure_type": "transport",
+				"mode_class": "Rail",
+				"mode": "High speed rail",
+				"intervention_class": "New construction",
+				"intervention_name": "New high speed line at grade",
+				"intervention": "hs_line_grade"
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						-0.280995,
+						52.996112
+					],
+					[
+						-0.213016,
+						52.920118
+					],
+					[
+						-0.172491,
+						52.921694
+					]
+				]
+			}
+		}
+	]
+}
