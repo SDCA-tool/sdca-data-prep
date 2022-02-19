@@ -186,6 +186,13 @@ cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_c
 cat(paste0("\n Column names are "), file = log_con, append = TRUE)
 cat(paste0("\n",names(components)), file = log_con, append = TRUE)
 
+
+# Standardise assets and components to SI units
+components$no_granular_data_A1_A3 = as.numeric(components$no_granular_data_A1_A3)
+components$no_granular_data_A4 = as.numeric(components$no_granular_data_A4)
+components$no_granular_data_B2 = as.numeric(components$no_granular_data_B2)
+components$no_granular_data_B4 = as.numeric(components$no_granular_data_B4)
+
 #components$input_unit[components$cf_name == "no_granular_data"] = "no_granular_data"
 components$input_unit[components$input_unit == "metres"] = "m"
 components$input_unit[components$input_unit == "length"] = "km"
@@ -193,11 +200,7 @@ components$input_unit[components$input_unit == "area (m2)"] = "m2"
 components$input_unit[components$input_unit == "1"] = "number"
 components$input_unit[is.na(components$input_unit)] = "number"
 
-# Standardise assets and components to SI units
-components$no_granular_data_A1_A3 = as.numeric(components$no_granular_data_A1_A3)
-components$no_granular_data_A4 = as.numeric(components$no_granular_data_A4)
-components$no_granular_data_B2 = as.numeric(components$no_granular_data_B2)
-components$no_granular_data_B4 = as.numeric(components$no_granular_data_B4)
+
 
 #Standerdise to SI units
 for(i in 1:nrow(components)){
@@ -238,21 +241,21 @@ for(i in 1:nrow(components)){
   sub_unit = components$asset_unit[i]
   if(!is.na(sub_unit)){
     if (sub_unit == "km") {
-      components$quantity[i] = components$quantity[i] / 1000
+      #components$quantity[i] = components$quantity[i] / 1000
       components$A5[i] = components$A5[i] / 1000
       components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1000
       components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1000
       components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1000
       components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1000
-      components$input_unit[i] = "asset_unit"
+      components$input_unit[i] = "m"
     } else if(sub_unit == "km2"){
-      components$quantity[i] = components$quantity[i] / 1e6
+      #components$quantity[i] = components$quantity[i] / 1e6
       components$A5[i] = components$A5[i] / 1e6
       components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1e6
       components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1e6
       components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1e6
       components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1e6
-      components$input_unit[i] = "asset_unit"
+      components$input_unit[i] = "m2"
     } else {
       if(!sub_unit %in% c("m","number")){
         stop("Unknown asset_unit:  ",sub_unit)
