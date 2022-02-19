@@ -195,7 +195,6 @@ components$no_granular_data_B4 = as.numeric(components$no_granular_data_B4)
 
 #components$input_unit[components$cf_name == "no_granular_data"] = "no_granular_data"
 components$input_unit[components$input_unit == "metres"] = "m"
-components$input_unit[components$input_unit == "length"] = "km"
 components$input_unit[components$input_unit == "area (m2)"] = "m2"
 components$input_unit[components$input_unit == "1"] = "number"
 components$input_unit[is.na(components$input_unit)] = "number"

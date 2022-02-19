@@ -1,9 +1,9 @@
-2022-02-19 11:21:27 Starting data import
-2022-02-19 11:21:27 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions.xlsx
+2022-02-19 12:44:29 Starting data import
+2022-02-19 12:44:29 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions.xlsx
 
-2022-02-19 11:21:27 rows =  146 cols = 12
+2022-02-19 12:44:29 rows =  146 cols = 12
 
-2022-02-19 11:21:27 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions_to_assets.xlsx
+2022-02-19 12:44:29 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/interventions_to_assets.xlsx
 
  Sheet found: hs_line_grade 
  Sheet found: hs_line_cutting 
@@ -42,14 +42,14 @@
  Sheet found: cycle_stands_roof 
  Sheet found: cycle_docking_station 
  Sheet found: cycle_secure_parking
-2022-02-19 11:21:27 The following  tabs in interventions_to_assets are not in interventions: 
+2022-02-19 12:44:29 The following  tabs in interventions_to_assets are not in interventions: 
 rail_underpass_footpath, rail_underpass, rail_maintenance_depot, rail_freight_terminal
-2022-02-19 11:21:27 The following  interventions in interventions are not tabs in interventions_to_assets : 
+2022-02-19 12:44:29 The following  interventions in interventions are not tabs in interventions_to_assets : 
 hs_OLE
-2022-02-19 11:21:27 Wrong column names in hs_station_elevated
+2022-02-19 12:44:29 Wrong column names in hs_station_elevated
  missing: include
-2022-02-19 11:21:29 Imported all sheets
-2022-02-19 11:21:29 Merged all sheets into single table
+2022-02-19 12:44:30 Imported all sheets
+2022-02-19 12:44:30 Merged all sheets into single table
  Column names are 
 intervention 
 asset 
@@ -76,8 +76,8 @@ volume_unit
 volume_default 
 width_unit 
 width_default
-2022-02-19 11:21:29 Creating parameters table
-2022-02-19 11:21:29 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/assets.xlsx
+2022-02-19 12:44:30 Creating parameters table
+2022-02-19 12:44:30 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/assets.xlsx
 
  Sheet found: hs_tunnel_portal 
  Sheet found: hs_cut_cover_tunnel 
@@ -87,7 +87,7 @@ width_default
  Sheet found: hs_embankment 
  Sheet found: hs_bridge 
  Sheet found: hs_viaduct 
- Sheet found: HS_line_viaduct_BU 
+ Sheet found: hs_line_viaduct_BU 
  Sheet found: hs_Rail_Underpass 
  Sheet found: hs_culvert 
  Sheet found: hs_culvert_BU 
@@ -104,7 +104,7 @@ width_default
  Sheet found: hs_overbridge_BU 
  Sheet found: hs_mined_tunnel_BU 
  Sheet found: hs_boxstructure_BU 
- Sheet found: HS_bored_tunnel_BU 
+ Sheet found: hs_bored_tunnel_BU 
  Sheet found: hs_cutting_BU 
  Sheet found: hs_embankment_BU 
  Sheet found: hs_OLE 
@@ -140,8 +140,8 @@ width_default
  Sheet found: cycle_stands_open 
  Sheet found: cycle_secure_parking 
  Sheet found: cycle_docking_station
-2022-02-19 11:21:31 Imported all sheets
-2022-02-19 11:21:31 Merged all sheets into single table
+2022-02-19 12:44:33 Imported all sheets
+2022-02-19 12:44:33 Merged all sheets into single table
  Column names are 
 asset 
 works_category_level_1 
@@ -156,11 +156,11 @@ no_granular_data_A1_A3
 no_granular_data_A4 
 no_granular_data_B2 
 no_granular_data_B4
-2022-02-19 11:21:31 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/carbon_factors_library.csv
+2022-02-19 12:44:33 reading D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General/Data Tables/clean/carbon_factors_library.csv
 
  Duplicated carbon factor names found
  De-duplicating
-2022-02-19 11:21:31 removed duplicated carbon factors 
+2022-02-19 12:44:33 removed duplicated carbon factors 
 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
@@ -207,6 +207,6 @@ rail_freight_terminal
 
 hs_station_underground 
 hs_ole
-2022-02-19 11:21:31 saving outputs 
+2022-02-19 12:44:33 saving outputs 
 
-2022-02-19 11:21:31 Processing complete 
+2022-02-19 12:44:33 Processing complete 
