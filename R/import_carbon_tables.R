@@ -1,17 +1,33 @@
-dir = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
-#dir = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
-#dir = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+dir1 = "E:/Users/earmmor/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+dir2 = "D:/University of Leeds/TEAM - Shared Digital Carbon Architecture - Documents/General"
+dir3 = "C:/Users/malco/University of Leeds/TEAM - Shared Digital Carbon Architecture - General"
+
+if(dir.exists(dir1)){
+  dir <- dir1
+} else if(dir.exists(dir2)){
+  dir <- dir2
+} else if(dir.exists(dir3)){
+  dir <- dir3
+} else{
+  stop("unknown dir")
+}
 
 library(readr)
 library(readxl)
 library(dplyr)
 
 # Create a log file
-log_con <- "data_import_log.txt"
+log_con <- file.path(dir,"Data Tables/clean/data_import_log.txt")
 if(file.exists(log_con)){
   unlink(log_con)
 }
-cat(paste0(Sys.time()," Starting data import"), file = log_con)
+
+cat(paste0("This file logs the import of the assets.xlxs, carbon_factors_libaray.csv,"), file = log_con)
+cat(paste0("\ninterventions.xlsx, and interventions_to_assets.xlsx files."), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("It looks for possible errors and missing data."), file = log_con, append = TRUE, sep = "\n")
+
+
+cat(paste0(Sys.time()," Starting data import"), file = log_con, append = TRUE, sep = "\n")
 
 
 # Intervention Types
@@ -48,16 +64,13 @@ sheets = excel_sheets(path)
 cat(paste0("\n Sheet found: ",sheets), file = log_con, append = TRUE)
 
 #Check for matches
-log_message = paste0("\n",Sys.time()," The following  tabs in interventions_to_assets are not in interventions: \n",
-                     paste(sheets[!sheets %in% interventions$intervention], collapse = ", "))
-message(log_message)
-cat(log_message, file = log_con, append = TRUE)
-log_message = paste0("\n",Sys.time()," The following  interventions in interventions are not tabs in interventions_to_assets : \n",
-        paste(interventions$intervention[!interventions$intervention %in% sheets], collapse = ", "))
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following tabs in interventions_to_assets.xlsx are not in interventions.xlsx: \n"), file = log_con, append = TRUE)
+cat(paste0("\n",sheets[!sheets %in% interventions$intervention]), file = log_con, append = TRUE)
 
-message(log_message)
-cat(log_message, file = log_con, append = TRUE)
-
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following interventions in interventions.xlsx are not tabs in interventions_to_assets.xlsx : \n"), file = log_con, append = TRUE)
+cat(paste0("\n",interventions$intervention[!interventions$intervention %in% sheets]), file = log_con, append = TRUE)
 
 assets <- list()
 sub_names = c("asset_id","asset","include",
@@ -69,6 +82,7 @@ sub_names = c("asset_id","asset","include",
               "span_unit","span_default","volume_unit",
               "volume_default","width_unit","width_default")
 
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
 for(i in 1:length(sheets)){
   sub = read_excel(path, sheet = sheets[i], col_types = "text")
   if(!identical(names(sub), sub_names)){
@@ -88,6 +102,7 @@ for(i in 1:length(sheets)){
   assets[[i]] = sub
 
 }
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",Sys.time()," Imported all sheets"), file = log_con, append = TRUE)
 
 assets = bind_rows(assets)
@@ -98,7 +113,8 @@ names(assets)[1:2] <- c("asset","asset_name")
 assets <- assets[,c("intervention",names(assets)[names(assets) != "intervention"])]
 
 cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_con, append = TRUE)
-cat(paste0("\n Column names are "), file = log_con, append = TRUE)
+cat(paste0("\n",Sys.time()," rows =  ",nrow(assets)," cols = ",ncol(assets)), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\nColumn names are "), file = log_con, append = TRUE)
 cat(paste0("\n",names(assets)), file = log_con, append = TRUE)
 
 cat(paste0("\n",Sys.time()," Creating parameters table"), file = log_con, append = TRUE)
@@ -174,6 +190,7 @@ for(i in 1:length(sheets)){
   sub$quantity = round(as.numeric(sub$quantity),5)
   components[[i]] = sub
 }
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",Sys.time()," Imported all sheets"), file = log_con, append = TRUE)
 
 components = bind_rows(components)
@@ -183,9 +200,18 @@ components$assets_sample_size <- NULL
 names(components) <- gsub("-","_",names(components))
 
 cat(paste0("\n",Sys.time()," Merged all sheets into single table"), file = log_con, append = TRUE)
-cat(paste0("\n Column names are "), file = log_con, append = TRUE)
+cat(paste0("\n",Sys.time()," rows =  ",nrow(components)," cols = ",ncol(components)), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\nColumn names are: "), file = log_con, append = TRUE)
 cat(paste0("\n",names(components)), file = log_con, append = TRUE)
 
+#Check for matches
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following assets in interventions_to_assets.xlsx are not in assets.xlsx: \n"), file = log_con, append = TRUE)
+cat(paste0("\n",unique(assets$asset[!assets$asset %in% components$asset])), file = log_con, append = TRUE)
+
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following assets in assets.xlsx are not in interventions_to_assets.xlsx : \n"), file = log_con, append = TRUE)
+cat(paste0("\n",unique(components$asset[!components$asset %in% assets$asset])), file = log_con, append = TRUE)
 
 # Standardise assets and components to SI units
 components$no_granular_data_A1_A3 = as.numeric(components$no_granular_data_A1_A3)
@@ -193,83 +219,18 @@ components$no_granular_data_A4 = as.numeric(components$no_granular_data_A4)
 components$no_granular_data_B2 = as.numeric(components$no_granular_data_B2)
 components$no_granular_data_B4 = as.numeric(components$no_granular_data_B4)
 
-#components$input_unit[components$cf_name == "no_granular_data"] = "no_granular_data"
-components$input_unit[components$input_unit == "metres"] = "m"
-components$input_unit[components$input_unit == "area (m2)"] = "m2"
-components$input_unit[components$input_unit == "1"] = "number"
-components$input_unit[is.na(components$input_unit)] = "number"
+# Check Units
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following input_unit are in assets.xlsx: \n"), file = log_con, append = TRUE)
+cat(paste0("\n",unique(components$input_unit)), file = log_con, append = TRUE)
 
-
-
-#Standerdise to SI units
-for(i in 1:nrow(components)){
-  sub_unit = components$input_unit[i]
-  if(sub_unit == "kg"){
-    # Do nothing
-  } else if (sub_unit == "tonnes") {
-    components$quantity[i] = components$quantity[i] * 1000
-    components$A5[i] = components$A5[i] * 1000
-    components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] * 1000
-    components$no_granular_data_A4[i] = components$no_granular_data_A4[i] * 1000
-    components$no_granular_data_B2[i] = components$no_granular_data_B2[i] * 1000
-    components$no_granular_data_B4[i] = components$no_granular_data_B4[i] * 1000
-    components$input_unit[i] = "kg"
-  
-  } else if (sub_unit == "km") {
-    #components$quantity[i] = components$quantity[i]
-    components$A5[i] = components$A5[i] / 1000
-    components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1000
-    components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1000
-    components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1000
-    components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1000
-    components$input_unit[i] = "m"
-    
-  } else {
-    if(!sub_unit %in% c("m","m2","m3","no_granular_data", "l","kwh","number","average depth (m)","length")){
-      stop("Unknown input_unit:  ",sub_unit)
-    }
-  }
-  
-}
-
-assets_sub = assets[,c("asset","asset_unit")]
-assets_sub = unique(assets_sub)
-components = left_join(components, assets_sub, by = c("asset" = "asset"))
-
-for(i in 1:nrow(components)){
-  sub_unit = components$asset_unit[i]
-  if(!is.na(sub_unit)){
-    if (sub_unit == "km") {
-      #components$quantity[i] = components$quantity[i] / 1000
-      components$A5[i] = components$A5[i] / 1000
-      components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1000
-      components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1000
-      components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1000
-      components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1000
-      components$input_unit[i] = "m"
-    } else if(sub_unit == "km2"){
-      #components$quantity[i] = components$quantity[i] / 1e6
-      components$A5[i] = components$A5[i] / 1e6
-      components$no_granular_data_A1_A3[i] = components$no_granular_data_A1_A3[i] / 1e6
-      components$no_granular_data_A4[i] = components$no_granular_data_A4[i] / 1e6
-      components$no_granular_data_B2[i] = components$no_granular_data_B2[i] / 1e6
-      components$no_granular_data_B4[i] = components$no_granular_data_B4[i] / 1e6
-      components$input_unit[i] = "m2"
-    } else {
-      if(!sub_unit %in% c("m","number")){
-        stop("Unknown asset_unit:  ",sub_unit)
-      }
-    }
-  }
-}
-
-assets$asset_unit[assets$asset_unit == "km"] = "m"
-assets$asset_unit[assets$asset_unit == "km2"] = "m2"
-components$asset_unit = NULL
-
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n",Sys.time()," The following unit_type are in interventions_to_assets.xlsx: \n"), file = log_con, append = TRUE)
+cat(paste0("\n",unique(assets$unit_type)), file = log_con, append = TRUE)
 
 # Carbon Factors
 path = file.path(dir,"Data Tables/clean/carbon_factors_library.csv")
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",Sys.time()," reading ",path), file = log_con, append = TRUE, sep = "\n")
 
 carbon_factors = read_csv(path)
@@ -277,9 +238,12 @@ carbon_factors = read_csv(path)
 if(any(duplicated(carbon_factors$cf_name))){
   warning("Duplicated carbon factor names")
   dups <- carbon_factors$cf_name[duplicated(carbon_factors$cf_name)]
-  cat(paste0("\n Duplicated carbon factor names found"), file = log_con, append = TRUE)
-  #cat(paste0("\n",dups), file = log_con, append = TRUE)
+  cat(paste0("\nDuplicated carbon factor names found"), file = log_con, append = TRUE)
+  dups <- unique(dups)
+  dups <- dups[order(dups)]
+  cat(paste0("\n",dups), file = log_con, append = TRUE)
   
+  cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
   cat(paste0("\n De-duplicating"), file = log_con, append = TRUE)
   
   carbon_factors_notdup = carbon_factors[!carbon_factors$cf_name %in% dups, ]
@@ -404,8 +368,6 @@ assets$asset <- tolower(assets$asset)
 assets_parameters$asset <- tolower(assets_parameters$asset)
 components$asset <- tolower(components$asset)
 
-
-
 #DO checks
 interventions_sub = interventions[,c("mode","intervention_class","intervention"), drop = FALSE,]
 assets_sub = assets[,c("intervention","asset")]
@@ -445,24 +407,22 @@ missing_interventions = unique(missing_interventions)
 missing_assets2 = interventions$intervention[!interventions$intervention %in% assets$intervention]
 missing_assets2 = unique(missing_assets2)
 
-cat(paste0("\n"," ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n\n\n"), file = log_con, append = TRUE, sep = "\n")
-cat(paste0("\n"," Summary of Missing Data"), file = log_con, append = TRUE, sep = "\n")
-cat(paste0("\n"," Missing carbon factors"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n\n\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Summary of Missing Data"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Missing carbon factors"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",missing_cf), file = log_con, append = TRUE)
-
-cat(paste0("\n"," Asssets which don't have any components"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Asssets which don't have any components"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",missing_components), file = log_con, append = TRUE)
-
-cat(paste0("\n"," Assets that have components but are not listed in the asset table"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Assets that have components but are not listed in the asset table"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",missing_assets1), file = log_con, append = TRUE)
-
-cat(paste0("\n"," Interventions that have assets but are not listed in the intervention table"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Interventions that have assets but are not listed in the intervention table"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",missing_interventions), file = log_con, append = TRUE)
-
-cat(paste0("\n"," Interventions that have no assets"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n"), file = log_con, append = TRUE, sep = "\n")
+cat(paste0("\n","Interventions that have no assets"), file = log_con, append = TRUE, sep = "\n")
 cat(paste0("\n",missing_assets2), file = log_con, append = TRUE)
-
-
 
 # Remove Scientific notation
 components$quantity <- format(components$quantity, scientific = FALSE, digits = 5, trim = TRUE)
@@ -485,6 +445,13 @@ write.csv(assets, "../sdca-data/data_tables/assets.csv", row.names = FALSE, na =
 write.csv(components, "../sdca-data/data_tables/components.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
 write.csv(carbon_factors, "../sdca-data/data_tables/carbon_factors.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
 write.csv(assets_parameters, "../sdca-data/data_tables/assets_parameters.csv", row.names = FALSE, na = "", fileEncoding = "UTF-8")
+
+
+write.csv(interventions, file.path(dir,"Data Tables/clean/imported/interventions.csv"), row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(assets,file.path(dir,"Data Tables/clean/imported/assets.csv"), row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(components, file.path(dir,"Data Tables/clean/imported/components.csv"), row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(carbon_factors, file.path(dir,"Data Tables/clean/imported/carbon_factors.csv"), row.names = FALSE, na = "", fileEncoding = "UTF-8")
+write.csv(assets_parameters, file.path(dir,"Data Tables/clean/imported/assets_parameters.csv"), row.names = FALSE, na = "", fileEncoding = "UTF-8")
 
 
 
