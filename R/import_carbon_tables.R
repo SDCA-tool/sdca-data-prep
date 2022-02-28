@@ -368,6 +368,11 @@ assets$asset <- tolower(assets$asset)
 assets_parameters$asset <- tolower(assets_parameters$asset)
 components$asset <- tolower(components$asset)
 
+# Subset to onyl carbon factors used
+
+carbon_factors <- carbon_factors[carbon_factors$cf_name %in% components$cf_name, ]
+
+
 #DO checks
 interventions_sub = interventions[,c("mode","intervention_class","intervention"), drop = FALSE,]
 assets_sub = assets[,c("intervention","asset")]
