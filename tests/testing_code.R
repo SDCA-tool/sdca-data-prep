@@ -22,6 +22,7 @@ dat$path_superficial <- "../sdca-data-prep/rasters/superficial.tif"
 
 #Loop over everything
 library(sf)
+library(sdca)
 interventions = read.csv("../sdca-data/data_tables/interventions.csv")
 interventions = interventions[,c("infrastructure_type",
                                  "mode_class",
@@ -30,6 +31,10 @@ interventions = interventions[,c("infrastructure_type",
                                  "intervention_name",
                                  "intervention")]
 template = st_read("../sdca-data-prep/tests/one_km_cornwall.geojson")
+assets = read.csv("../sdca-data/data_tables/assets.csv") 
+assets_parameters = read.csv("../sdca-data/data_tables/assets_parameters.csv")
+components = read.csv("../sdca-data/data_tables/components.csv")
+carbon_factors = read.csv("../sdca-data/data_tables/carbon_factors.csv")
 
 res <- list()
 for(i in 1:nrow(interventions)){
@@ -44,12 +49,20 @@ for(i in 1:nrow(interventions)){
   dat$path_bedrock <- "../sdca-data-prep/rasters/bedrock.tif"
   dat$path_superficial <- "../sdca-data-prep/rasters/superficial.tif"
   
+  # Local Tables
+  dat$assets <- assets[assets$intervention %in% int_sub$intervention,]
+  dat$assets_parameters <- assets_parameters[assets_parameters$asset %in% dat$assets$asset,]
+  dat$components <- components[components$asset %in% dat$assets$asset,]
+  dat$carbon_factors <- carbon_factors[carbon_factors$cf_name %in% dat$components$cf_name,]
+  
+  
   dat = try(process_results(dat, local = TRUE), silent = TRUE)
   unlink("data/tmp_geom.geojson")
   if("try-error" %in% class(dat)){
     message("failed for: ", int_sub$intervention)
   } else {
     dat = jsonlite::fromJSON(dat)
+    dat$name = int_sub$intervention
     res[[i]] <- dat
   }
 
@@ -61,7 +74,11 @@ res_itemised <- dplyr::bind_rows(res_itemised)
 
 
 res_pas2080 <- lapply(res, function(x){x$pas2080})
-names(res_pas2080) <- interventions$intervention
+nms <- lapply(res, function(x){x$name})
+nms[sapply(nms, is.null)] <- NA
+nms <- unlist(nms)
+
+names(res_pas2080) <- nms
 res_pas2080 <- dplyr::bind_rows(res_pas2080, .id = "intervention")
 res_pas2080 <- res_pas2080[,c("intervention","pas2080_code","emissions")]
 res_pas2080 <- res_pas2080[res_pas2080$pas2080_code %in% c("A1-3","A4","A5","B2","B4"),]
